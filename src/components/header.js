@@ -1,33 +1,22 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+import logo from '../images/logo.svg';
+import borderTop from '../images/border-top.svg';
 
-export default Header
+export default function Header({siteTitle}) {
+  return (
+    <>
+      <div>
+        <img src={borderTop} alt="" />
+      </div>
+      <div style={{width: '188px', height: '172px'}}>
+        <h1>
+          <Link to="/">
+            <img src={logo} alt="Block Party Event Co." />
+          </Link>
+        </h1>
+      </div>
+    </>
+  )
+};
