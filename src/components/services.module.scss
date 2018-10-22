@@ -1,0 +1,103 @@
+@import '../styles/variables';
+
+$image-spacing-unit: 1.5rem;
+
+.Services {
+}
+
+.PinkSection {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  background-color: $color-pink;
+  color: $color-white;
+}
+
+.Image,
+.Block,
+.Dots {
+  width: 76%
+}
+
+.DesignImage {
+  position: relative;
+  padding-top: $image-spacing-unit;
+
+  .Image {
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+
+  .Block {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .Dots {
+    position: absolute;
+    z-index: 2;
+    bottom: $image-spacing-unit * -1;
+    right: 0;
+  }
+}
+
+.PlanningImage {
+  position: relative;
+  padding-top: $image-spacing-unit;
+
+  .Image {
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+
+  .Block {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+  }
+
+  .Dots {
+    position: absolute;
+    z-index: 2;
+    bottom: $image-spacing-unit * -1;
+    left: 0;
+  }
+
+}
+
+.CoordinationImage {
+  position: relative;
+  padding-top: $image-spacing-unit;
+
+  .Image {
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+
+  .Block {
+    position: absolute;
+    z-index: 1;
+    bottom: $image-spacing-unit * -1;
+    right: 0;
+  }
+
+  .Dots {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+}
+
+.pushRight {
+  margin: 3rem 0 0 6rem;
+}
+
+.pushLeft {
+  margin: 3rem 6rem 0 0;
+}

@@ -1,0 +1,38 @@
+@import '../styles/variables';
+
+.Media {
+  width: 100%;
+  max-width: $width-constrained;
+  display: flex;
+  margin: 0 auto;
+}
+
+.narrowWidth {
+  max-width: $width-constrained;
+}
+
+.fullWidth {
+  max-width: $width-full;
+}
+
+.wideWidth {
+  max-width: $width-wide;
+}
+
+.Image {
+  padding: 0 4% 2rem 0;
+  flex: 1 0 30%;
+}
+
+.Content {
+  padding-top: 1.5rem;
+  flex: 1 0 66%;
+}
+
+.rightAligned {
+  flex-direction: row-reverse;
+
+  .Image {
+    padding: 0 0 2rem 4%;
+  }
+}

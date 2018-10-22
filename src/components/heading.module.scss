@@ -1,0 +1,29 @@
+@import '../styles/variables';
+
+.Heading {
+  line-height: 1.25;
+  margin-bottom: .5em;
+}
+
+.levelOne {
+  font-family: 'newzald-bold';
+  font-size: 36px;
+  text-transform: lowercase;
+}
+
+.levelTwo {
+  font-family: "basic-sans";
+  font-weight: 300;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.levelThree {
+
+}
+
+.centered {
+  text-align: center;
+  margin-left: 0;
+}

@@ -18,5 +18,13 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: 'qol8ztn',
+        },
+      },
+    },
   ],
 }

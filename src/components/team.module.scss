@@ -1,0 +1,44 @@
+.Team {
+  padding: 6rem 0;
+}
+
+$image-spacing-unit: 1.5rem;
+
+.Figure {
+  position: relative;
+  padding-top: $image-spacing-unit;
+}
+
+.LeftBlock,
+.RightBlock,
+.Dots {
+  width: 70%
+}
+
+.Image {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.LeftBlock {
+  position: absolute;
+  z-index: 2;
+  top: $image-spacing-unit * -1;
+  left: $image-spacing-unit * -1;
+}
+
+.RightBlock {
+  position: absolute;
+  z-index: 2;
+  bottom: $image-spacing-unit * -2;
+  right: $image-spacing-unit * -1;
+}
+
+.Dots {
+  position: absolute;
+  z-index: 1;
+  bottom: $image-spacing-unit * -1;
+  left: 0;
+}

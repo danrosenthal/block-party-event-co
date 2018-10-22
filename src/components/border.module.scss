@@ -1,0 +1,53 @@
+.Border {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 0;
+  min-height: 44px;
+}
+
+.yellowTop {
+  background-image: url("../images/border-top.png");
+
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../images/border-top-2x.png");
+  }
+}
+
+.yellowBottom {
+  background-image: url("../images/border-bottom.png");
+  background-position: 0 100%;
+
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../images/border-bottom-2x.png");
+  }
+}
+
+.pinkTop {
+  background-image: url("../images/border-top-pink.png");
+
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../images/border-top-pink-2x.png");
+  }
+}
+
+.pinkBottom {
+  background-image: url("../images/border-bottom-pink.png");
+  background-position: 0 100%;
+
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url("../images/border-bottom-pink-2x.png");
+  }
+}
+

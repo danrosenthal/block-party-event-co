@@ -1,0 +1,41 @@
+@import '../styles/variables';
+
+.Hero {
+  padding: 6rem 1rem 6rem 1rem;
+}
+
+.Figure {
+  position: relative;
+  max-width: $width-full;
+  width: 100%;
+  margin: 0 auto 8rem;
+}
+
+.Image {
+  max-width: 66.6666667%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.Dots {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  bottom: -16%;
+  right: 0;
+}
+
+.Block {
+  position: absolute;
+  z-index: -2;
+  width: 37.5%;
+  height: auto;
+  top: -7%;
+  left: 6%;
+}
+
+.Content {
+  max-width: $width-constrained;
+  margin: 0 auto;
+}

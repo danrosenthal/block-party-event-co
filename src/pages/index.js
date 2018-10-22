@@ -1,11 +1,19 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import Home from '../components/home'
+import Hero from '../components/hero'
+import Services from '../components/services'
+import Team from '../components/team'
+import Blog from '../components/blog'
+import Contact from '../components/contact'
 
 const IndexPage = () => (
   <Layout>
-    <Home />
+    <Hero />
+    <Services />
+    <Team />
+    <Blog />
+    <Contact />
   </Layout>
 )
 
