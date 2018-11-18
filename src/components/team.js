@@ -7,15 +7,13 @@ import Media from '../components/media'
 
 import styles from './team.module.scss'
 
-import chelseaBaker from '../images/chelsea-baker.jpg'
+export default function Team({title, content, image}) {
 
-export default function Team() {
-
-  const image = (
+  const imageMarkup = (
     <div className={styles.Figure}>
       <div className={styles.Image}>
         <img
-          src={chelseaBaker}
+          src={image}
           alt="a headshot of chelsea baker, founder and lead planner"
         />
       </div>
@@ -53,20 +51,12 @@ export default function Team() {
 
   return (
     <section className={styles.Team}>
-      <Media image={image} width="wide">
+      <Media image={imageMarkup} width="full">
         <Heading level="1">
-          meet Chelsea
+          {title}
         </Heading>
-        <Text indented lead>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna ali.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nosquam erat volutpat.
-          </p>
+        <Text indented>
+          {content}
         </Text>
       </Media>
     </section>

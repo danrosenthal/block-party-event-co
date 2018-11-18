@@ -1,0 +1,21 @@
+@import '../styles/variables';
+
+.Button {
+  text-decoration: none;
+  background-color: $color-red;
+  padding: .75rem 3rem;
+  color: $color-white;
+  font-family: "basic-sans";
+  transition: background-color 200ms ease;
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-align: center;
+
+  &:focus,
+  &:hover {
+    background-color: darken($color-red, 15%);
+  }
+}

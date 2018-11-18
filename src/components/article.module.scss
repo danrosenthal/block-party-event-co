@@ -1,0 +1,6 @@
+@import '../styles/variables';
+
+.Article {
+  max-width: $width-constrained;
+  margin: 2rem auto 2rem;
+}

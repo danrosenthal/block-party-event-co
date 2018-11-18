@@ -2,20 +2,28 @@ import React from 'react'
 
 import styles from './services.module.scss'
 
-import servicesToast from '../images/services-toast.jpg'
-import servicesFlowers from '../images/services-flowers.jpg'
-import servicesGlasses from '../images/services-glasses.jpg'
-
 import Border from '../components/border'
 import Heading from '../components/heading'
 import Text from '../components/text'
 import Media from '../components/media'
 
-export default function Services() {
+export default function Services({
+  title,
+  content,
+  subTitle1,
+  subContent1,
+  subImage1,
+  subTitle2,
+  subContent2,
+  subImage2,
+  subTitle3,
+  subContent3,
+  subImage3,
+}) {
   const designImage = (
     <div className={styles.DesignImage}>
       <div className={styles.Image}>
-        <img src={servicesToast} alt="wedding scene that illustrates design" />
+        <img src={subImage1} alt="wedding scene that illustrates design" />
       </div>
       <div className={styles.Block}>
         <svg
@@ -41,7 +49,7 @@ export default function Services() {
     <div className={styles.PlanningImage}>
       <div className={styles.Image}>
         <img
-          src={servicesFlowers}
+          src={subImage2}
           alt="professional scene that illustrates planning"
         />
       </div>
@@ -69,7 +77,7 @@ export default function Services() {
     <div className={styles.CoordinationImage}>
       <div className={styles.Image}>
         <img
-          src={servicesGlasses}
+          src={subImage3}
           alt="party scene with happy guests that illustrates coordination"
         />
       </div>
@@ -94,50 +102,37 @@ export default function Services() {
   )
 
   return (
-    <div className={styles.Services}>
+    <>
       <Border />
       <div className={styles.PinkSection}>
         <Heading level="1" centered={true}>
-          services what we offering
+          {title}
         </Heading>
-        <div className={styles.pushRight}>
-          <Media image={designImage} width="narrow">
-            <Heading level="2">Design</Heading>
-            <Text indented>
-              <p>
-                Ipsum dolor sit amet, consectetur adipiscing elit, sedo eiusmod
-                tempor incididunt lore ut lore et dolore Ipsum dolor sit amet elit
-                consectetur adipiscing.
-              </p>
-            </Text>
-          </Media>
+        <div className={styles.Services}>
+          <Text centered lead>
+            {content}
+          </Text>
         </div>
-        <div className={styles.pushLeft}>
-          <Media width="narrow" image={planningImage} rightAligned>
-            <Heading level="2">Planning</Heading>
-            <Text indented>
-              <p>
-                Ipsum dolor sit amet, consectetur adipiscing elit, sedo eiusmod
-                tempor incididunt lore ut lore et dolore Ipsum dolor sit amet elit
-                consectetur adipiscing.
-              </p>
-            </Text>
-          </Media>
-        </div>
-        <div className={styles.pushRight}>
-          <Media width="narrow" image={coordinationImage}>
-            <Heading level="2">Coordination</Heading>
-            <Text indented>
-              <p>
-                Ipsum dolor sit amet, consectetur adipiscing elit, sedo eiusmod
-                tempor incididunt lore ut lore et dolore Ipsum dolor sit amet elit
-                consectetur adipiscing.
-              </p>
-            </Text>
-          </Media>
-        </div>
+        <Media image={designImage} width="full" pushRight>
+          <Heading level="2">{subTitle1}</Heading>
+          <Text indented>
+            {subContent1}
+          </Text>
+        </Media>
+        <Media width="full" image={planningImage} rightAligned pushLeft>
+          <Heading level="2">{subTitle2}</Heading>
+          <Text indented>
+            {subContent2}
+          </Text>
+        </Media>
+        <Media width="full" image={coordinationImage} pushRight>
+          <Heading level="2">{subTitle3}</Heading>
+          <Text indented>
+            {subContent3}
+          </Text>
+        </Media>
       </div>
       <Border top />
-    </div>
+    </>
   )
 }

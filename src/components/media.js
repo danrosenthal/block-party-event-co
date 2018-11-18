@@ -4,10 +4,19 @@ import PropTypes from 'prop-types'
 
 import styles from './media.module.scss'
 
-export default function Media({ children, image, rightAligned = false, width }) {
+export default function Media({
+  children,
+  image,
+  rightAligned = false,
+  width,
+  pushRight,
+  pushLeft,
+}) {
   const className = classNames(
     styles.Media,
     rightAligned && styles.rightAligned,
+    pushRight && styles.pushRight,
+    pushLeft && styles.pushLeft,
     width === 'wide' && styles.wideWidth,
     width === 'full' && styles.fullWidth,
     width === 'narrow' && styles.narrowWidth,
@@ -24,6 +33,5 @@ export default function Media({ children, image, rightAligned = false, width }) 
 Media.propTypes = {
   children: PropTypes.node.isRequired,
   image: PropTypes.node.isRequired,
-  rightAligned: PropTypes.boolean,
   width: PropTypes.string.isRequired,
 }

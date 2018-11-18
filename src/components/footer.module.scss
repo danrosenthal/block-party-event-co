@@ -1,10 +1,13 @@
 @import '../styles/variables';
 
 .Footer {
-  background-color: $color-pink;
+  max-width: $width-full;
+  margin: 0 auto;
 }
 
 .PinkSection {
   background-color: $color-pink;
   color: $color-white;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }

@@ -1,14 +1,15 @@
 @import '../styles/variables';
 
 .Hero {
-  padding: 6rem 1rem 6rem 1rem;
+  padding: 6rem 1rem 4rem 1rem;
 }
 
 .Figure {
   position: relative;
   max-width: $width-full;
   width: 100%;
-  margin: 0 auto 8rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Image {
@@ -37,5 +38,5 @@
 
 .Content {
   max-width: $width-constrained;
-  margin: 0 auto;
+  margin: 6rem auto 2rem;
 }

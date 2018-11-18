@@ -1,18 +1,35 @@
 import React from 'react'
 
 import styles from './hero.module.scss'
-import hero from '../images/hero.jpg'
 
 import Heading from '../components/heading'
 import Text from '../components/text'
 
-export default function Hero() {
+import classNames from 'classnames'
+
+export default function Hero({ title, content, image, spaced }) {
+  const className = classNames(
+    styles.Hero,
+    spaced && styles.spaced
+  )
+
+  const contentMarkup = (title || content) && (
+    <div className={styles.Content}>
+      <Heading level="1" centered>
+        {title}
+      </Heading>
+      <Text lead centered>
+        {content}
+      </Text>
+    </div>
+  );
+
   return (
-    <section className={styles.Hero}>
+    <section className={className}>
       <figure className={styles.Figure}>
         <div className={styles.Image}>
           <img
-            src={hero}
+            src={image}
             alt="wedding scene with bride and groom, confetti falling"
           />
         </div>
@@ -24,7 +41,7 @@ export default function Hero() {
           >
             <path
               d="M192.57 199.56A606.25 606.25 0 0 0 198 94.63c-.63-17.91-2.05-35.79-2.3-53.71-.26-19 .78-16.13-2.21-34.9C133.18 9.34 71.82-8.5 12.93 5.33a4.47 4.47 0 0 0-2.39 1.09A5 5 0 0 0 9.55 9C-1.12 66.77-1.84 116.38 2.47 175.15 3.2 185 3.9 201.39 3.9 201.39s39.21-.12 51.74.08q44.39.69 88.77-.32c4.23-.09 47.94 0 48.16-1.59z"
-              fill="#ccc2b8"
+              fill="#F04E30"
             />
           </svg>
         </div>
@@ -77,16 +94,7 @@ export default function Hero() {
           </svg>
         </div>
       </figure>
-      <div className={styles.Content}>
-        <Heading level="1" centered>Get a wedding jackass</Heading>
-        <Text lead centered>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat.
-          </p>
-        </Text>
-      </div>
+      {contentMarkup}
     </section>
   )
 }

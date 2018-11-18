@@ -1,0 +1,90 @@
+@import '../styles/variables';
+
+$image-spacing-unit: 1.5rem;
+
+.Figure {
+  position: relative;
+  padding-top: $image-spacing-unit;
+  max-width: $width-constrained;
+  margin: 0 auto;
+}
+
+.LeftBlock,
+.RightBlock {
+  width: 40%
+}
+
+.LeftBlock {
+  position: absolute;
+  z-index: 2;
+  top: $image-spacing-unit * -1;
+  left: $image-spacing-unit * -1;
+}
+
+.RightBlock {
+  position: absolute;
+  z-index: 2;
+  bottom: $image-spacing-unit * -2;
+  right: $image-spacing-unit * -1;
+}
+
+.Contact {
+  background-image: url("../images/dots-square.png");
+  background-repeat: repeat;
+  background-size: 173px 169px;
+  background-position: center top;
+  padding: 10rem 0;
+  color: $color-white;
+}
+
+.FormContainer {
+  margin: 0 auto;
+  background-color: $color-gray;
+  padding: 4rem 3rem 5rem;
+  box-sizing: border-box;
+  width: 92%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.FormSection {
+  > label {
+    width: 100%;
+  }
+
+  margin-top: 2rem;
+}
+
+.FormLabel {
+  font-family: "basic-sans";
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: .5rem;
+  display: block;
+}
+
+.TextField {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: border, box-shadow 200ms ease;
+  border: 4px solid lighten($color-gray, 12%);
+  font-size: 16px;
+  font-family: "basic-sans";
+  outline: none;
+  appearance: none;
+  background-color: lighten($color-white, .0625%);
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 4px $color-pink;
+  }
+}
+
+.tall {
+  min-height: 12rem;
+  resize: none;
+}

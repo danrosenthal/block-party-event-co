@@ -4,7 +4,8 @@
   width: 100%;
   max-width: $width-constrained;
   display: flex;
-  margin: 0 auto;
+  box-sizing: border-box;
+  margin: 2rem auto 0;
 }
 
 .narrowWidth {
@@ -25,7 +26,6 @@
 }
 
 .Content {
-  padding-top: 1.5rem;
   flex: 1 0 66%;
 }
 
@@ -35,4 +35,14 @@
   .Image {
     padding: 0 0 2rem 4%;
   }
+}
+
+$push-offset: 6rem;
+
+.pushRight {
+  padding-left: $push-offset;
+}
+
+.pushLeft {
+  padding-right: $push-offset;
 }

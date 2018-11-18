@@ -3,6 +3,13 @@ module.exports = {
     title: 'Block Party Event Co.',
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `zibnbjr0fmuz`,
+        accessToken: `c0987dd00c3c38c8472fb821d29bbcc4d4bd0d8282b400589aa6fd0f3c272313`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
