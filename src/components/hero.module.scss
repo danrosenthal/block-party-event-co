@@ -1,7 +1,11 @@
 @import '../styles/variables';
 
 .Hero {
-  padding: 6rem 1rem 4rem 1rem;
+  padding: 6rem 2rem 4rem;
+
+  @media screen and (min-width: $width-medium) {
+    padding: 6rem 1rem 4rem;
+  }
 }
 
 .Figure {
@@ -37,6 +41,6 @@
 }
 
 .Content {
-  max-width: $width-constrained;
+  max-width: $width-medium;
   margin: 6rem auto 2rem;
 }
