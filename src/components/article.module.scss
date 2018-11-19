@@ -1,6 +1,7 @@
 @import '../styles/variables';
 
 .Article {
-  max-width: $width-constrained;
+  max-width: $width-medium;
+  padding: 1rem;
   margin: 2rem auto 2rem;
 }
