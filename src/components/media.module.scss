@@ -2,10 +2,16 @@
 
 .Media {
   width: 100%;
-  max-width: $width-constrained;
   display: flex;
   box-sizing: border-box;
   margin: 2rem auto 0;
+  flex-direction: column;
+  padding: 2rem;
+
+  @media screen and (min-width: $width-medium) {
+    padding: 0;
+    flex-direction: row;
+  }
 }
 
 .narrowWidth {
@@ -21,16 +27,26 @@
 }
 
 .Image {
-  padding: 0 4% 2rem 0;
-  flex: 1 0 30%;
+  padding: 0 4% 4rem 0;
+  flex: 1 0 100%;
+
+  @media screen and (min-width: $width-medium) {
+    padding: 0 4% 2rem 0;
+    flex: 1 0 30%;
+  }
 }
 
 .Content {
-  flex: 1 0 66%;
+  flex: 1 0 100%;
+  @media screen and (min-width: $width-medium) {
+    flex: 1 0 66%;
+  }
 }
 
 .rightAligned {
-  flex-direction: row-reverse;
+  @media screen and (min-width: $width-medium) {
+    flex-direction: row-reverse;
+  }
 
   .Image {
     padding: 0 0 2rem 4%;
@@ -40,9 +56,13 @@
 $push-offset: 6rem;
 
 .pushRight {
-  padding-left: $push-offset;
+  @media screen and (min-width: $width-medium) {
+    padding-left: $push-offset;
+  }
 }
 
 .pushLeft {
-  padding-right: $push-offset;
+  @media screen and (min-width: $width-medium) {
+    padding-right: $push-offset;
+  }
 }
