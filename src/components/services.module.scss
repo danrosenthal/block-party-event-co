@@ -5,7 +5,11 @@ $image-spacing-unit: 1.5rem;
 .Services {
   max-width: $width-constrained;
   margin: 0 auto;
-  padding-bottom: 2rem;
+  padding: 2rem;
+
+  @media screen and (min-width: $width-medium) {
+    padding: 0 0 2rem;
+  }
 }
 
 .PinkSection {
