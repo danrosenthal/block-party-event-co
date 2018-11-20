@@ -3,6 +3,10 @@
   background-size: contain;
   background-position: 0 0;
   min-height: 44px;
+
+  @media screen and (min-width: 1200px) {
+    background-size: cover;
+  }
 }
 
 .yellowTop {
@@ -13,6 +17,10 @@
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min-device-pixel-ratio: 1.5) {
       background-image: url("../images/border-top-2x.png");
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-position: 0 100%;
   }
 }
 
@@ -37,6 +45,10 @@
     only screen and (min-device-pixel-ratio: 1.5) {
       background-image: url("../images/border-top-pink-2x.png");
   }
+
+  @media screen and (min-width: 1200px) {
+    background-position: 0 100%;
+  }
 }
 
 .pinkBottom {
@@ -48,6 +60,10 @@
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min-device-pixel-ratio: 1.5) {
       background-image: url("../images/border-bottom-pink-2x.png");
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-position: 0 0;
   }
 }
 

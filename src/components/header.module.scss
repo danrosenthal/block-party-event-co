@@ -10,19 +10,32 @@
   justify-content: center;
 
   > * {
-    width: 188px;
-    height: 172px;
+    width: 6rem;
+    height: auto;
+
+    @media screen and (min-width: $width-constrained) {
+      width: 8rem;
+    }
+
+    @media screen and (min-width: $width-medium) {
+      width: 12rem;
+    }
   }
 }
 
 .HeaderContainer {
-  margin-top: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: $width-medium;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   overflow: hidden;
+
+  @media screen and (min-width: $width-medium) {
+    padding-top: 4rem;
+  }
 }

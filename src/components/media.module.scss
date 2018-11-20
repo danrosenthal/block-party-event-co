@@ -58,11 +58,13 @@ $push-offset: 6rem;
 .pushRight {
   @media screen and (min-width: $width-medium) {
     padding-left: $push-offset;
+    padding-right: 1rem;
   }
 }
 
 .pushLeft {
   @media screen and (min-width: $width-medium) {
     padding-right: $push-offset;
+    padding-left: 1rem;
   }
 }
