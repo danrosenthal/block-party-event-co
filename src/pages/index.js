@@ -15,7 +15,7 @@ const propTypes = {
 }
 class IndexPage extends React.Component {
   render() {
-    const {data} = this.props;
+    const { data } = this.props
     const {
       heroTitle,
       heroContent,
@@ -36,12 +36,8 @@ class IndexPage extends React.Component {
       teamImage,
       blogTitle,
       contactTitle,
-    } = data.contentfulPage;
-    const {
-      title,
-      description,
-    } = data.allContentfulPost.edges[0].node
-
+    } = data.contentfulPage
+    const { title, description } = data.allPost.edges[0].node
     return (
       <Layout>
         <Hero
@@ -92,7 +88,7 @@ IndexPage.propTypes = propTypes
 
 export const pageQuery = graphql`
   query pageQuery {
-    contentfulPage(contentful_id: {eq: "cq71OLaGk0aKYMy6QwgMu"}) {
+    contentfulPage(contentful_id: { eq: "cq71OLaGk0aKYMy6QwgMu" }) {
       pageSlug
       heroTitle
       heroContent {
@@ -177,13 +173,11 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPost(limit: 1) {
+    allPost(limit: 1) {
       edges {
         node {
-          title,
-          description {
-            description
-          }
+          title
+          description
         }
       }
     }

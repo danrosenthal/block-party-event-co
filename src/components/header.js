@@ -6,17 +6,20 @@ import styles from './header.module.scss'
 import Border from '../components/border'
 import Button from '../components/button'
 
-export default function Header({ siteTitle }) {
+export default function Header({ postLink }) {
   return (
     <div className={styles.Header}>
       <div className={styles.YellowSection} />
       <Border yellow top />
       <div className={styles.HeaderContainer}>
-        <Button>Blog</Button>
+        <Button url={postLink}>Blog</Button>
         <div className={styles.Logo}>
           <h1>
             <Link to="/">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.8 171.58">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 187.8 171.58"
+              >
                 <path
                   d="M7.87 4.86A388.55 388.55 0 0 0 0 86.91c.16 14 1.09 28 .88 42-.21 14.87.31 27.84 2.72 42.53 58.17-2.3 115.12 4.57 172.17-5.95a5.11 5.11 0 0 0 2.32-.85 3.61 3.61 0 0 0 1-2c11.7-45.16 9.06-95.81 6.36-141.81-.45-7.65-.69-20.49-.69-20.49s-32.93-.08-45-.3c-28.48-.5-57 3.44-85.48 3.82-4.07.05-46.15-.24-46.41 1z"
                   fill="#f8aa97"

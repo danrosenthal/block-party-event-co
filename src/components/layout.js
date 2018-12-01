@@ -1,20 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+
+import generateBlogPostLink from '../utilities/generateBlogPostLink'
+
 import { StaticQuery, graphql } from 'gatsby'
 import Footer from '../components/footer'
 import Header from '../components/header'
 
 import './layout.scss'
 
-
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query HeaderQuery {
         site {
           siteMetadata {
             title
+          }
+        }
+        allPost(limit: 1) {
+          edges {
+            node {
+              title
+              description
+            }
           }
         }
       }
@@ -30,7 +40,9 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header
+          postLink={generateBlogPostLink(data.allPost.edges[0].node.title)}
+        />
         {children}
         <Footer>
           <p>come check out this sweet sweet footer content</p>

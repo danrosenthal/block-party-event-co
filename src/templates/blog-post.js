@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import marked from 'marked';
+import formatDate from '../utilities/formatDate';
 
 import Layout from '../components/layout'
 import Article from '../components/article'
@@ -6,20 +8,29 @@ import Hero from '../components/hero'
 import Text from '../components/text'
 import Heading from '../components/heading'
 
-import contentfulContentTransformer from '../transformers/contentful-content-transformer'
-
+import styles from './blog-post.module.scss'
 class BlogPostTemplate extends React.Component {
   render() {
-    const { data } = this.props
-    const { contentfulPost } = data
+    const { post } = this.props.data
+    const {
+      title,
+      content,
+      featuredImage,
+      updatedAt,
+    } = post;
     return (
       <Layout>
-        <Hero image={contentfulPost.image.file.url} />
+        <Hero image={featuredImage.url} />
         <Article>
-          <Heading level="1">
-            {contentfulPost.title}
+          <Heading centered level="1">
+            {title}
           </Heading>
-          <Text>{contentfulContentTransformer(contentfulPost.content)}</Text>
+          <Text centered>
+            <p><em>{formatDate(updatedAt)}</em></p>
+          </Text>
+          <Text>
+            <div className={styles.BlogContent} dangerouslySetInnerHTML={{__html: marked(content)}}/>
+          </Text>
         </Article>
       </Layout>
     )
@@ -29,32 +40,17 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    contentfulPost(slug: { eq: $slug }) {
-      title,
-      slug,
-    	description {
-      	description
-    	},
-    	content {
-        content {
-          nodeType
-          content {
-            value,
-          }
-          data {
-            target {
-              sys {
-                id,
-              }
-            }
-          }
-        }
-      },
-    	image {
-        file {
-          url
-        }
+  query BlogPostById($id: String!) {
+    post(id: { eq: $id }) {
+      status
+      id
+      createdAt
+      updatedAt
+      title
+      description
+      content
+      featuredImage {
+        url
       }
     }
     contentfulPage(contentful_id: { eq: "cq71OLaGk0aKYMy6QwgMu" }) {

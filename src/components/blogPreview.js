@@ -1,4 +1,5 @@
 import React from 'react'
+import generateBlogPostLink from '../utilities/generateBlogPostLink'
 
 import styles from './blogPreview.module.scss'
 
@@ -9,7 +10,6 @@ import Text from './text'
 import Article from './article'
 
 export default function Blog({title, post}) {
-  const {description: {description}} = post;
   return (
     <section className={styles.Blog}>
       <Border yellow />
@@ -23,9 +23,9 @@ export default function Blog({title, post}) {
           </Heading>
           <Text lead centered>
             <p>
-              {description}
+              {post.description}
             </p>
-            <Button url="articles/hire-a-wedding-planner">read more</Button>
+            <Button url={generateBlogPostLink(post.title)}>read more</Button>
           </Text>
         </Article>
       </div>

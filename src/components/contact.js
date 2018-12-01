@@ -40,7 +40,7 @@ export default function Contact() {
   const textFieldClassName = classNames(styles.tall, styles.TextField);
 
   return (
-    <section className={styles.Contact}>
+    <section className={styles.Contact} id="#contact">
       <div className={styles.Figure}>
         <div className={styles.FormContainer}>
           <Heading level="1">Get in touch</Heading>

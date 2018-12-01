@@ -15,10 +15,11 @@ exports.createPages = ({graphql, actions}) => {
     resolve(
       graphql(`
         {
-          allContentfulPost (limit:100) {
+          allPost {
             edges {
               node {
-                slug
+                id
+                title
               }
             }
           }
@@ -28,12 +29,12 @@ exports.createPages = ({graphql, actions}) => {
         if (result.errors) {
           reject(result.errors)
         }
-        result.data.allContentfulPost.edges.forEach((edge) => {
+        result.data.allPost.edges.forEach((edge) => {
           createPage ({
-            path: "blog/" + edge.node.slug,
+            path: "blog/" + slugify(edge.node.title),
             component: storeTemplate,
             context: {
-              slug: edge.node.slug
+              id: edge.node.id
             }
           })
         })
@@ -41,4 +42,17 @@ exports.createPages = ({graphql, actions}) => {
       })
     )
   })
+}
+
+function slugify(string) {
+  const a = 'àáäâãåèéëêìíïîòóöôùúüûñçßÿœæŕśńṕẃǵǹḿǘẍźḧ·/_,:;'
+  const b = 'aaaaaaeeeeiiiioooouuuuncsyoarsnpwgnmuxzh------'
+  const p = new RegExp(a.split('').join('|'), 'g')
+  return string.toString().toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with
+    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+    .replace(/&/g, '-and-') // Replace & with ‘and’
+    .replace(/[^\w-]+/g, '') // Remove all non-word characters
+    .replace(/--+/g, '-') // Replace multiple — with single -
+    .replace(/^-+/, '') // Trim — from start of text .replace(/-+$/, '') // Trim — from end of text
 }
