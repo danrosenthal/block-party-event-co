@@ -7,10 +7,13 @@ export default function Button({
   children,
   onClick,
   url,
+  submit,
 }) {
   const className = classNames(
     styles.Button,
   );
+
+  const type = submit ? 'submit' : 'button';
 
   if (url) {
     return (
@@ -20,7 +23,7 @@ export default function Button({
     )
   } else {
     return (
-      <button onClick={onClick} className={className}>
+      <button type={type} onClick={onClick} className={className}>
         {children}
       </button>
     )

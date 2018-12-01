@@ -78,7 +78,7 @@ export default function Contact() {
               </label>
             </div>
             <div className={styles.FormSection}>
-              <Button>Submit</Button>
+              <Button submit>Submit</Button>
             </div>
           </form>
         </div>
