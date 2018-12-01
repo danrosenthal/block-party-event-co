@@ -44,7 +44,7 @@ export default function Contact() {
       <div className={styles.Figure}>
         <div className={styles.FormContainer}>
           <Heading level="1">Get in touch</Heading>
-          <form>
+          <form name="contact" method="POST" netlify>
             <div className={styles.FormSection}>
               <label htmlFor="name">
                 <span className={styles.FormLabel}>
