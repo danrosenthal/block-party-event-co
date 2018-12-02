@@ -19,7 +19,7 @@ const Layout = ({ children }) => (
             title
           }
         }
-        allPost(limit: 1) {
+        allPost(sort: { fields: createdAt, order: DESC }, limit: 1) {
           edges {
             node {
               title
