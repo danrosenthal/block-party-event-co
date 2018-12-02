@@ -78,6 +78,7 @@ export default function Contact() {
               </label>
             </div>
             <div className={styles.FormSection}>
+              <input type="hidden" name="form-name" value="contact" />
               <Button submit>Submit</Button>
             </div>
           </form>
