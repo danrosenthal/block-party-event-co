@@ -6,3 +6,11 @@
 - [ ] finish building blogroll page
 - [ ] write content for footer
 - [ ] lay out footer content
+- [ ] add favicon
+- [ ] fix unstyled flash on hero load
+- [ ] generate most recent blog post link in gatsby-node, share it with gatsby-browser
+- [ ] learn more about using browser apis in gatsby to perform a scroll to target
+- [ ] learn about gatsby support for query parameters in URLs and if I can use them for anything clever
+- [ ] look at some examples of nice gatsby apps to see if you can learn some tricks
+- [ ] convert components to use JSX extension instead of JS
+
