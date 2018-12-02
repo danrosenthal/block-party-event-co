@@ -13,6 +13,8 @@ export default function Heading({ level = '1', children, centered = false }) {
     levelClassName = styles.levelTwo
   } else if (level === '3') {
     levelClassName = styles.levelThree
+  } else if (level === '4') {
+    levelClassName = styles.levelFour
   }
 
   const className = classNames(
@@ -27,6 +29,8 @@ export default function Heading({ level = '1', children, centered = false }) {
     return <h2 className={className}>{children}</h2>
   } else if (level === '3') {
     return <h3 className={className}>{children}</h3>
+  } else if (level === '4') {
+    return <h4 className={className}>{children}</h4>
   }
 }
 

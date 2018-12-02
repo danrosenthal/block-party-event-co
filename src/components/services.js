@@ -105,28 +105,28 @@ export default function Services({
     <>
       <Border />
       <div className={styles.PinkSection}>
-        <Heading level="1" centered={true}>
+        <Heading level="2" centered={true}>
           {title}
         </Heading>
         <div className={styles.Services}>
-          <Text centered lead>
+          <Text centered>
             {content}
           </Text>
         </div>
         <Media image={designImage} width="full" pushRight>
-          <Heading level="2">{subTitle1}</Heading>
+          <Heading level="3">{subTitle1}</Heading>
           <Text indented>
             {subContent1}
           </Text>
         </Media>
         <Media width="full" image={planningImage} rightAligned pushLeft>
-          <Heading level="2">{subTitle2}</Heading>
+          <Heading level="3">{subTitle2}</Heading>
           <Text indented>
             {subContent2}
           </Text>
         </Media>
         <Media width="full" image={coordinationImage} pushRight>
-          <Heading level="2">{subTitle3}</Heading>
+          <Heading level="3">{subTitle3}</Heading>
           <Text indented>
             {subContent3}
           </Text>
