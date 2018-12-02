@@ -6,13 +6,13 @@ import styles from './header.module.scss'
 import Border from '../components/border'
 import Button from '../components/button'
 
-export default function Header({ postLink }) {
+export default function Header() {
   return (
     <div className={styles.Header}>
       <div className={styles.YellowSection} />
       <Border yellow top />
       <div className={styles.HeaderContainer}>
-        <Button url={postLink}>Blog</Button>
+        <Button url="/blog">Blog</Button>
         <div className={styles.Logo}>
           <h1>
             <Link to="/">
