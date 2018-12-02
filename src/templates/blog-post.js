@@ -1,6 +1,6 @@
-import React from 'react';
-import marked from 'marked';
-import formatDate from '../utilities/formatDate';
+import React from 'react'
+import marked from 'marked'
+import formatDate from '../utilities/formatDate'
 
 import Layout from '../components/layout'
 import Article from '../components/article'
@@ -12,12 +12,7 @@ import styles from './blog-post.module.scss'
 class BlogPostTemplate extends React.Component {
   render() {
     const { post } = this.props.data
-    const {
-      title,
-      content,
-      featuredImage,
-      updatedAt,
-    } = post;
+    const { title, content, featuredImage, updatedAt } = post
     return (
       <Layout>
         <Hero image={featuredImage.url} />
@@ -26,10 +21,15 @@ class BlogPostTemplate extends React.Component {
             {title}
           </Heading>
           <Text centered>
-            <p><em>{formatDate(updatedAt)}</em></p>
+            <p>
+              <em>{formatDate(updatedAt)}</em>
+            </p>
           </Text>
           <Text>
-            <div className={styles.BlogContent} dangerouslySetInnerHTML={{__html: marked(content)}}/>
+            <div
+              className={styles.BlogContent}
+              dangerouslySetInnerHTML={{ __html: marked(content) }}
+            />
           </Text>
         </Article>
       </Layout>

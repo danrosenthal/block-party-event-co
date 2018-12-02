@@ -1,11 +1,11 @@
 export default function formatDate(UTCDate) {
-  const dateInstance = new Date(UTCDate);
+  const dateInstance = new Date(UTCDate)
 
-  const date = dateInstance.getDate();
+  const date = dateInstance.getDate()
   const month = dateInstance.toLocaleString(Date.locale, {
-    month: "long"
-  });
-  const year = dateInstance.getFullYear();
+    month: 'long',
+  })
+  const year = dateInstance.getFullYear()
 
-  return `${month} ${date}, ${year}`;
+  return `${month} ${date}, ${year}`
 }

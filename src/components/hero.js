@@ -8,10 +8,7 @@ import Text from '../components/text'
 import classNames from 'classnames'
 
 export default function Hero({ title, content, image, spaced }) {
-  const className = classNames(
-    styles.Hero,
-    spaced && styles.spaced
-  )
+  const className = classNames(styles.Hero, spaced && styles.spaced)
 
   const contentMarkup = (title || content) && (
     <div className={styles.Content}>
@@ -22,7 +19,7 @@ export default function Hero({ title, content, image, spaced }) {
         {content}
       </Text>
     </div>
-  );
+  )
 
   return (
     <section className={className}>

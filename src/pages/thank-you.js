@@ -7,7 +7,9 @@ import Page from '../components/page'
 const ThankYou = () => (
   <Layout>
     <Page>
-      <Heading level="1" centered>Thank you</Heading>
+      <Heading level="1" centered>
+        Thank you
+      </Heading>
       <Text centered lead>
         <p>Thanks for reaching out. We'll get back to you soon.</p>
       </Text>

@@ -173,11 +173,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allPost(sort: {
-      fields: createdAt
-      order: DESC
-    },
-    limit: 1) {
+    allPost(sort: { fields: createdAt, order: DESC }, limit: 1) {
       edges {
         node {
           title

@@ -11,9 +11,7 @@ export default function Footer({ children }) {
       <Border />
       <div className={styles.PinkSection}>
         <div className={styles.Footer}>
-          <Text>
-            {children}
-          </Text>
+          <Text>{children}</Text>
         </div>
       </div>
     </>

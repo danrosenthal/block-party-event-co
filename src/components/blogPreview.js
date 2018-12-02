@@ -9,22 +9,20 @@ import Heading from './heading'
 import Text from './text'
 import Article from './article'
 
-export default function Blog({title, post}) {
+export default function Blog({ title, post }) {
   return (
     <section className={styles.Blog}>
       <Border yellow />
       <div className={styles.YellowSection}>
-      <Heading level="1" centered={true}>
-        {title}
-      </Heading>
+        <Heading level="1" centered={true}>
+          {title}
+        </Heading>
         <Article>
           <Heading level="2" centered={true}>
             {post.title}
           </Heading>
           <Text lead centered>
-            <p>
-              {post.description}
-            </p>
+            <p>{post.description}</p>
             <Button url={generateBlogPostLink(post.title)}>read more</Button>
           </Text>
         </Article>

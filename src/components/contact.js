@@ -6,7 +6,7 @@ import Button from '../components/button'
 
 import styles from './contact.module.scss'
 
-export default function Contact({dots}) {
+export default function Contact({ dots }) {
   const leftBlock = (
     <div className={styles.LeftBlock}>
       <svg
@@ -20,7 +20,7 @@ export default function Contact({dots}) {
         />
       </svg>
     </div>
-  );
+  )
 
   const rightBlock = (
     <div className={styles.RightBlock}>
@@ -35,51 +35,64 @@ export default function Contact({dots}) {
         />
       </svg>
     </div>
-  );
+  )
 
-  const textFieldClassName = classNames(styles.tall, styles.TextField);
+  const textFieldClassName = classNames(styles.tall, styles.TextField)
 
-  const className = classNames(
-    dots && styles.dots,
-    styles.Contact
-  );
+  const className = classNames(dots && styles.dots, styles.Contact)
 
   return (
     <section className={className} id="#contact">
       <div className={styles.Figure}>
         <div className={styles.FormContainer}>
           <Heading level="1">Get in touch</Heading>
-          <form name="contact" method="POST" data-netlify="true" actions="/thank-you">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            action="/thank-you"
+          >
             <div className={styles.FormSection}>
               <label htmlFor="name">
-                <span className={styles.FormLabel}>
-                  Name
-                </span>
-                <input className={styles.TextField} type="text" id="name" name="name" />
+                <span className={styles.FormLabel}>Name</span>
+                <input
+                  className={styles.TextField}
+                  type="text"
+                  id="name"
+                  name="name"
+                />
               </label>
             </div>
             <div className={styles.FormSection}>
               <label htmlFor="email">
-                <span className={styles.FormLabel}>
-                  Email address
-                </span>
-                <input className={styles.TextField} type="email" id="email" name="email" />
+                <span className={styles.FormLabel}>Email address</span>
+                <input
+                  className={styles.TextField}
+                  type="email"
+                  id="email"
+                  name="email"
+                />
               </label>
             </div>
             <div className={styles.FormSection}>
               <label htmlFor="phone">
-                <span className={styles.FormLabel}>
-                  Phone number
-                </span>
-                <input className={styles.TextField} type="tel" id="phone" name="phone" />
+                <span className={styles.FormLabel}>Phone number</span>
+                <input
+                  className={styles.TextField}
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                />
               </label>
             </div>
             <div className={styles.FormSection}>
               <label htmlFor="message">
-                <span className={styles.FormLabel}>
-                  Message
-                </span>
-                <textarea className={textFieldClassName} id="message" name="message" />
+                <span className={styles.FormLabel}>Message</span>
+                <textarea
+                  className={textFieldClassName}
+                  id="message"
+                  name="message"
+                />
               </label>
             </div>
             <div className={styles.FormSection}>

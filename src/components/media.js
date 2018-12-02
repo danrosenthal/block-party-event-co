@@ -19,7 +19,7 @@ export default function Media({
     pushLeft && styles.pushLeft,
     width === 'wide' && styles.wideWidth,
     width === 'full' && styles.fullWidth,
-    width === 'narrow' && styles.narrowWidth,
+    width === 'narrow' && styles.narrowWidth
   )
 
   return (
