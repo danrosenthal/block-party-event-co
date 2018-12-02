@@ -32,7 +32,7 @@ export default function Header({ postLink }) {
             </Link>
           </h1>
         </div>
-        <Button>Contact</Button>
+        <Button url="/contact">Contact</Button>
       </div>
     </div>
   )

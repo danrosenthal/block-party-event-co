@@ -71,7 +71,7 @@ class IndexPage extends React.Component {
             description,
           }}
         />
-        <Contact title={contactTitle} />
+        <Contact dots title={contactTitle} />
       </Layout>
     )
   }

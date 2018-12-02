@@ -34,15 +34,19 @@ $image-spacing-unit: 1.5rem;
 }
 
 .Contact {
-  background-image: url("../images/dots-square.png");
-  background-repeat: repeat;
-  background-size: 173px 169px;
-  background-position: center top;
-  padding: 2rem 0 4rem;
   color: $color-white;
+  padding: 4rem 0 4rem;
 
-  @media screen and (min-width: $width-medium) {
-    padding: 10rem 0 12rem;
+  &.dots {
+    background-image: url("../images/dots-square.png");
+    background-repeat: repeat;
+    background-size: 173px 169px;
+    background-position: center top;
+    padding: 2rem 0 4rem;
+
+    @media screen and (min-width: $width-medium) {
+      padding: 10rem 0 12rem;
+    }
   }
 }
 

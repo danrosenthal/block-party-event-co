@@ -3,17 +3,19 @@ import Layout from '../components/layout'
 import Heading from '../components/heading'
 import Text from '../components/text'
 import Page from '../components/page'
+import Contact from '../components/contact'
 
-const NotFoundPage = () => (
+const ContactPage = () => (
   <Layout>
     <Page>
-      <Heading level="1" centered>404: Not found</Heading>
+      <Heading level="1" centered>Contact</Heading>
       <Text centered lead>
-        <p>The page you're looking for doesn&#39;t exist.</p>
-        <p>Why don't you head back <a href="/">home</a>?</p>
+        <p>We'd love to chat. Please reach out.</p>
       </Text>
+      <Contact title="Contact" />
     </Page>
+
   </Layout>
 )
 
-export default NotFoundPage
+export default ContactPage

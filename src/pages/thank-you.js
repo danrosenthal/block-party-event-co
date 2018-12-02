@@ -4,16 +4,15 @@ import Heading from '../components/heading'
 import Text from '../components/text'
 import Page from '../components/page'
 
-const NotFoundPage = () => (
+const ThankYou = () => (
   <Layout>
     <Page>
-      <Heading level="1" centered>404: Not found</Heading>
+      <Heading level="1" centered>Thank you</Heading>
       <Text centered lead>
-        <p>The page you're looking for doesn&#39;t exist.</p>
-        <p>Why don't you head back <a href="/">home</a>?</p>
+        <p>Thanks for reaching out. We'll get back to you soon.</p>
       </Text>
     </Page>
   </Layout>
 )
 
-export default NotFoundPage
+export default ThankYou

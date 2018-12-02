@@ -6,7 +6,7 @@ import Button from '../components/button'
 
 import styles from './contact.module.scss'
 
-export default function Contact() {
+export default function Contact({dots}) {
   const leftBlock = (
     <div className={styles.LeftBlock}>
       <svg
@@ -39,12 +39,17 @@ export default function Contact() {
 
   const textFieldClassName = classNames(styles.tall, styles.TextField);
 
+  const className = classNames(
+    dots && styles.dots,
+    styles.Contact
+  );
+
   return (
-    <section className={styles.Contact} id="#contact">
+    <section className={className} id="#contact">
       <div className={styles.Figure}>
         <div className={styles.FormContainer}>
           <Heading level="1">Get in touch</Heading>
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" data-netlify="true" actions="/thank-you">
             <div className={styles.FormSection}>
               <label htmlFor="name">
                 <span className={styles.FormLabel}>
