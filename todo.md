@@ -1,0 +1,4 @@
+- [ ] migrate home page content to graphcms
+- [ ] get contact form submitting properly following [this guide](https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/)
+- [ ] do something safe with environment variables
+- [ ] add next and previous post links to post page
