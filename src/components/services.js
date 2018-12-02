@@ -118,7 +118,7 @@ export default function Services({
           {title}
         </Heading>
         <div className={styles.Services}>
-          <Text centered>{content}</Text>
+          <Text centered lead>{content}</Text>
         </div>
         <Media image={designImage} width="full" pushRight>
           <Heading level="3">{subTitle1}</Heading>

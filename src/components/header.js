@@ -12,7 +12,14 @@ export default function Header({ postLink }) {
       <div className={styles.YellowSection} />
       <Border yellow top />
       <div className={styles.HeaderContainer}>
-        <Button url={postLink}>Blog</Button>
+        <ul className={styles.Navigation}>
+          <li className={styles.Item}>
+            <Button url={postLink}>Blog</Button>
+          </li>
+          <li className={styles.Item}>
+            <Button url="/contact">Contact</Button>
+          </li>
+        </ul>
         <div className={styles.Logo}>
           <h1>
             <Link to="/">
@@ -32,7 +39,6 @@ export default function Header({ postLink }) {
             </Link>
           </h1>
         </div>
-        <Button url="/contact">Contact</Button>
       </div>
     </div>
   )

@@ -1,12 +1,12 @@
+- [ ] write content for footer
+- [ ] lay out footer content
+- [ ] add favicon
 - [ ] migrate home page content to graphcms
 - [x] get contact form submitting properly
 - refactor form to be more reacty following [this guide](https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/)
 - [ ] do something safe with environment variables
 - [ ] add next and previous post links to post page
 - [ ] finish building blogroll page
-- [ ] write content for footer
-- [ ] lay out footer content
-- [ ] add favicon
 - [ ] fix unstyled flash on hero load
 - [ ] generate most recent blog post link in gatsby-node, share it with gatsby-browser
 - [ ] learn more about using browser apis in gatsby to perform a scroll to target
