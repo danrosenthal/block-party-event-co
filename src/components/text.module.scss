@@ -21,13 +21,13 @@
 }
 
 .indented {
-  @media screen and (min-width: $width-constrained) {
+  @media screen and (min-width: $width-small) {
     padding-left: 2rem;
   }
 }
 
 .indented.lead {
-  @media screen and (min-width: $width-constrained) {
+  @media screen and (min-width: $width-small) {
     padding-left: 2rem;
   }
 }
