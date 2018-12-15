@@ -9,6 +9,14 @@
   p {
     margin-bottom: 1.25em;
   }
+
+  a {
+    &:link,
+    &:active,
+    &:visited {
+      color: $color-red;
+    }
+  }
 }
 
 .lead {

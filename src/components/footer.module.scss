@@ -3,11 +3,11 @@
 .Footer {
   max-width: $width-medium;
   margin: 0 auto;
+  background-color: $color-white;
 }
 
 .PinkSection {
   background-color: $color-pink;
   color: $color-white;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  height: 2rem;
 }

@@ -44,9 +44,7 @@ const Layout = ({ children }) => (
           postLink={generateBlogPostLink(data.allPost.edges[0].node.title)}
         />
         {children}
-        <Footer>
-          <p>come check out this sweet sweet footer content</p>
-        </Footer>
+        <Footer />
       </>
     )}
   />

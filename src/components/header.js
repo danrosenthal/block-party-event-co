@@ -6,20 +6,24 @@ import styles from './header.module.scss'
 import Border from '../components/border'
 import Button from '../components/button'
 
-export default function Header({ postLink }) {
+export default function Header({ postLink, showNav }) {
+  const navigationMarkup = showNav ? (
+    <div className={styles.Navigation}>
+      <div className={styles.Item}>
+        <Button url={postLink}>Blog</Button>
+      </div>
+      <div className={styles.Item}>
+        <Button url="/contact">Contact</Button>
+      </div>
+    </div>
+  ) : null;
+
   return (
     <div className={styles.Header}>
       <div className={styles.YellowSection} />
       <Border yellow top />
       <div className={styles.HeaderContainer}>
-        <div className={styles.Navigation}>
-          <div className={styles.Item}>
-            <Button url={postLink}>Blog</Button>
-          </div>
-          <div className={styles.Item}>
-            <Button url="/contact">Contact</Button>
-          </div>
-        </div>
+        {navigationMarkup}
         <div className={styles.Logo}>
           <h1>
             <Link to="/">

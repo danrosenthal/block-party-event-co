@@ -1,8 +1,12 @@
 @import '../styles/variables';
 
+.Header {
+  background-color: $color-white;
+}
+
 .YellowSection {
   background-color: $color-yellow;
-  height: 2rem;
+  height: 4rem;
 }
 
 .Logo {
@@ -10,7 +14,7 @@
   justify-content: center;
 
   > * {
-    width: 8rem;
+    width: 10rem;
     height: auto;
 
     @media screen and (min-width: $width-medium) {

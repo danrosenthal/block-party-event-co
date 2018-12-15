@@ -5,10 +5,7 @@ import styles from './hero.module.scss'
 import Heading from '../components/heading'
 import Text from '../components/text'
 
-import classNames from 'classnames'
-
-export default function Hero({ title, content, image, spaced }) {
-  const className = classNames(styles.Hero, spaced && styles.spaced)
+export default function Hero({ title, content, image }) {
 
   const contentMarkup = (title || content) && (
     <div className={styles.Content}>
@@ -22,7 +19,7 @@ export default function Hero({ title, content, image, spaced }) {
   )
 
   return (
-    <section className={className}>
+    <section className={styles.Hero}>
       <figure className={styles.Figure}>
         <div className={styles.Image}>
           <img
