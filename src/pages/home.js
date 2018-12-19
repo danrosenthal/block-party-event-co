@@ -17,7 +17,6 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const {
-      heroTitle,
       heroContent,
       heroImage,
       servicesTitle,
@@ -42,7 +41,6 @@ class IndexPage extends React.Component {
       <Layout>
         <Hero
           spaced
-          title={heroTitle}
           content={contentfulContentTransformer(heroContent)}
           image={heroImage.file.url}
         />
@@ -90,7 +88,6 @@ export const pageQuery = graphql`
   query pageQuery {
     contentfulPage(contentful_id: { eq: "cq71OLaGk0aKYMy6QwgMu" }) {
       pageSlug
-      heroTitle
       heroContent {
         content {
           content {

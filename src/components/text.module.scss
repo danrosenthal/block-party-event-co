@@ -15,6 +15,11 @@
     &:active,
     &:visited {
       color: $color-red;
+      transition: color ease-in .2s;
+    }
+
+    &:hover {
+      color: darken($color-red, 10%);
     }
   }
 }

@@ -3,11 +3,69 @@
 .Footer {
   max-width: $width-medium;
   margin: 0 auto;
-  background-color: $color-white;
+  background-color: $color-pink;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (min-width: $width-medium) {
+    flex-direction: row;
+  }
+}
+
+.Logo {
+  width: 15rem;
+  margin-top: -1rem;
+  margin-bottom: -4rem;
+
+  @media screen and (min-width: $width-medium) {
+    margin: 0;
+  }
+
+  svg {
+    fill: $color-white;
+  }
 }
 
 .PinkSection {
   background-color: $color-pink;
   color: $color-white;
-  height: 2rem;
+  height: 4rem;
+}
+
+.FooterContainer {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 3rem 1rem 4rem;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "basic-sans";
+  font-weight: 300;
+  margin: 0;
+
+  a {
+    color: $color-white !important;
+  }
+}
+
+.Item {
+  display: flex;
+  align-items: center;
+}
+
+.Icon {
+  fill: $color-white;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: inline-block;
+  margin-right: .5rem;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
 }
