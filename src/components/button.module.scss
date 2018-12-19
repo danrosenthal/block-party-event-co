@@ -4,7 +4,7 @@
   text-decoration: none;
   background-color: $color-red;
   padding: .5rem 1rem;
-  color: $color-white;
+  color: $color-white !important;
   font-family: "basic-sans";
   transition: background-color 200ms ease;
   font-weight: 600;
