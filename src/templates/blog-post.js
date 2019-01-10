@@ -7,6 +7,7 @@ import Article from '../components/article'
 import Hero from '../components/hero'
 import Text from '../components/text'
 import Heading from '../components/heading'
+import Page from '../components/page'
 
 import styles from './blog-post.module.scss'
 class BlogPostTemplate extends React.Component {
@@ -16,22 +17,24 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout>
         <Hero image={featuredImage.url} />
-        <Article>
-          <Heading centered level="1">
-            {title}
-          </Heading>
-          <Text centered>
-            <p>
-              <em>{formatDate(updatedAt)}</em>
-            </p>
-          </Text>
-          <Text>
-            <div
-              className={styles.BlogContent}
-              dangerouslySetInnerHTML={{ __html: marked(content) }}
-            />
-          </Text>
-        </Article>
+        <Page>
+          <Article>
+            <Heading centered level="1">
+              {title}
+            </Heading>
+            <Text centered>
+              <p>
+                <em>{formatDate(updatedAt)}</em>
+              </p>
+            </Text>
+            <Text>
+              <div
+                className={styles.BlogContent}
+                dangerouslySetInnerHTML={{ __html: marked(content) }}
+              />
+            </Text>
+          </Article>
+        </Page>
       </Layout>
     )
   }
