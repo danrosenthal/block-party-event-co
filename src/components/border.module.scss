@@ -29,13 +29,17 @@
 
 .yellowBottom {
   background-image: url("../images/border-bottom.png");
-  background-position: 0 0;
+  background-position: 0 100%;
 
   @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
     only screen and (-moz-min-device-pixel-ratio: 1.5),
     only screen and (-o-min-device-pixel-ratio: 3/2),
     only screen and (min-device-pixel-ratio: 1.5) {
       background-image: url("../images/border-bottom-2x.png");
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-position: 0 0;
   }
 }
 
