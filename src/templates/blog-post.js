@@ -12,11 +12,11 @@ import Page from '../components/page'
 import styles from './blog-post.module.scss'
 class BlogPostTemplate extends React.Component {
   render() {
-    const { post } = this.props.data
-    const { title, content, featuredImage, updatedAt } = post
+    const { contentfulPost } = this.props.data
+    const { title, content: {content}, image: {file: {url}}, updatedAt } = contentfulPost
     return (
       <Layout>
-        <Hero image={featuredImage.url} />
+        <Hero image={url} />
         <Page>
           <Article>
             <Heading centered level="1">
@@ -44,16 +44,19 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostById($id: String!) {
-    post(id: { eq: $id }) {
-      status
+    contentfulPost(id: { eq: $id }) {
       id
       createdAt
       updatedAt
       title
       description
-      content
-      featuredImage {
-        url
+      content {
+        content
+      }
+      image {
+        file {
+          url
+        }
       }
     }
     contentfulPage(contentful_id: { eq: "cq71OLaGk0aKYMy6QwgMu" }) {

@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(`
         {
-          allPost {
+          allContentfulPost {
             edges {
               node {
                 id
@@ -29,7 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) {
           reject(result.errors)
         }
-        result.data.allPost.edges.forEach(edge => {
+        result.data.allContentfulPost.edges.forEach(edge => {
           createPage({
             path: 'blog/' + slugify(edge.node.title),
             component: storeTemplate,

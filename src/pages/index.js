@@ -36,7 +36,7 @@ class IndexPage extends React.Component {
       blogTitle,
       contactTitle,
     } = data.contentfulPage
-    const { title, description } = data.allPost.edges[0].node
+    const { title, description } = data.allContentfulPost.edges[0].node
     return (
       <Layout>
         <Hero
@@ -170,7 +170,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allPost(sort: { fields: createdAt, order: DESC }, limit: 1) {
+    allContentfulPost(sort: { fields: createdAt, order: DESC }, limit: 1) {
       edges {
         node {
           title
