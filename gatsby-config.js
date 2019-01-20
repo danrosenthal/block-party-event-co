@@ -3,6 +3,7 @@ module.exports = {
     title: 'Block Party Event Co.',
   },
   plugins: [
+    `gatsby-plugin-favicon`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
