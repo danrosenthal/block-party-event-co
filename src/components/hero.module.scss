@@ -5,13 +5,13 @@
   background-color: $color-white;
 
   @media screen and (min-width: $width-medium) {
-    padding: 4rem 1rem;
+    padding: 6rem 1rem;
   }
 }
 
 .Figure {
   position: relative;
-  max-width: $width-full;
+  max-width: $width-wide;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -44,5 +44,5 @@
 
 .Content {
   max-width: $width-medium;
-  margin: 6rem auto 2rem;
+  margin: 8rem auto 2rem;
 }
