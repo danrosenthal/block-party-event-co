@@ -7,16 +7,24 @@ import Text from '../components/text'
 
 export default function Hero({ title, content, image }) {
 
+  const headingMarkup = title && (
+    <Heading level="1" centered>
+      {title}
+    </Heading>
+  );
+
+  const textMarkup = content && (
+    <Text lead centered>
+      {content}
+    </Text>
+  );
+
   const contentMarkup = (title || content) && (
     <div className={styles.Content}>
-      <Heading level="1" centered>
-        {title}
-      </Heading>
-      <Text lead centered>
-        {content}
-      </Text>
+      {headingMarkup}
+      {textMarkup}
     </div>
-  )
+  );
 
   return (
     <section className={styles.Hero}>
