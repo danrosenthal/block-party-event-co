@@ -5,6 +5,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-favicon`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-132857780-1",
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `zibnbjr0fmuz`,
