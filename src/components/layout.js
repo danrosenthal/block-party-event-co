@@ -52,6 +52,11 @@ const Layout = ({ children }) => (
             { property: 'og:description', content: data.allContentfulMeta.edges[0].node.description },
             { property: 'og:image', content: data.allContentfulMeta.edges[0].node.image.file.url },
             { property: 'og:image:alt', content: data.allContentfulMeta.edges[0].node.image.description },
+            { name: 'twitter:card', content: 'summary'},
+            { name: 'twitter:title', content: data.allContentfulMeta.edges[0].node.title },
+            { name: 'twitter:description', content: data.allContentfulMeta.edges[0].node.description },
+            { name: 'twitter:image', content: data.allContentfulMeta.edges[0].node.image.file.url },
+            { name: 'twitter:image:alt', content: data.allContentfulMeta.edges[0].node.image.description },
           ]}
         >
           <html lang="en" />
