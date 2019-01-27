@@ -14,9 +14,19 @@ const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query HeaderQuery {
-        site {
-          siteMetadata {
-            title
+        allContentfulMeta(sort: { fields: createdAt, order: DESC }, limit: 1) {
+          edges {
+            node {
+              title
+              description
+              keywords
+              image {
+                file {
+                  url
+                }
+                description
+              }
+            }
           }
         }
         allPost(sort: { fields: createdAt, order: DESC }, limit: 1) {
@@ -32,10 +42,16 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={data.allContentfulMeta.edges[0].node.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: data.allContentfulMeta.edges[0].node.description },
+            { name: 'keywords', content: data.allContentfulMeta.edges[0].node.keywords },
+            { property: 'og:url', content: 'https://www.blockpartyeventco.com' },
+            { property: 'og:type', content: 'website' },
+            { property: 'og:title', content: data.allContentfulMeta.edges[0].node.title },
+            { property: 'og:description', content: data.allContentfulMeta.edges[0].node.description },
+            { property: 'og:image', content: data.allContentfulMeta.edges[0].node.image.file.url },
+            { property: 'og:image:alt', content: data.allContentfulMeta.edges[0].node.image.description },
           ]}
         >
           <html lang="en" />
