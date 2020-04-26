@@ -17,11 +17,11 @@
   max-height: 15rem;
   overflow: hidden;
 
-  @media (min-width: $mq-small) {
+  @media (min-width: $mq-tiny) {
     max-height: 22rem;
   }
 
-  @media (min-width: $mq-medium) {
+  @media (min-width: $mq-small) {
     max-height: 30rem;
   }
 
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0 4rem;
+  padding: 1rem 0 1rem;
 
   @media (min-width: $mq-large) {
     position: absolute;

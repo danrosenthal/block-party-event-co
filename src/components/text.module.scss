@@ -30,7 +30,7 @@
   line-height: 1.125;
   font-size: 30px;
 
-  @media (min-width: $mq-medium) {
+  @media (min-width: $mq-small) {
     font-size: 36px;
   }
 }
@@ -45,13 +45,13 @@
 }
 
 .indented {
-  @media screen and (min-width: $mq-small) {
+  @media screen and (min-width: $mq-tiny) {
     padding-left: 2rem;
   }
 }
 
 .indented.lead {
-  @media screen and (min-width: $mq-small) {
+  @media screen and (min-width: $mq-tiny) {
     padding-left: 2rem;
   }
 }

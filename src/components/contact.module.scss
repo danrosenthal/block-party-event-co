@@ -18,7 +18,7 @@ $image-spacing-unit: 1.5rem;
   width: 60%;
   display: none;
 
-  @media screen and (min-width: $mq-medium) {
+  @media screen and (min-width: $mq-small) {
     display: initial;
   }
 }
@@ -48,7 +48,7 @@ $image-spacing-unit: 1.5rem;
     background-position: center top;
     padding: 2rem 0 4rem;
 
-    @media screen and (min-width: $mq-medium) {
+    @media screen and (min-width: $mq-small) {
       padding: 10rem 0 10.75rem;
     }
   }
@@ -64,7 +64,7 @@ $image-spacing-unit: 1.5rem;
   position: relative;
   z-index: 3;
 
-  @media screen and (min-width: $mq-medium) {
+  @media screen and (min-width: $mq-small) {
     margin: 0 auto;
     width: 92%;
     padding: 4rem 3rem 5rem;

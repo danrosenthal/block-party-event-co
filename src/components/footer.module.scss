@@ -17,7 +17,7 @@
 .Logo {
   width: 14rem;
 
-  @media screen and (min-width: $mq-medium) {
+  @media screen and (min-width: $mq-small) {
     margin: 0;
   }
 
@@ -47,7 +47,7 @@
   font-weight: 300;
   padding: 0;
 
-  @media (min-width: $mq-small) {
+  @media (min-width: $mq-tiny) {
     flex-direction: row;
   }
 

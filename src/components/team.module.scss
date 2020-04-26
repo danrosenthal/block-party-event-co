@@ -1,8 +1,12 @@
 @import '../styles/variables';
 
 .Team {
-  padding: 6rem 0 6rem;
+  padding: 4rem 0 2rem;
   background-color: $color-white;
+
+  @media (min-width: $mq-medium) {
+    padding: 5rem 0 2rem;
+  }
 }
 
 $image-spacing-unit: 1.5rem;

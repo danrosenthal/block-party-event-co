@@ -70,7 +70,7 @@ class IndexPage extends React.Component {
             </Button>
           }
         />
-        {/* <Team
+        <Team
           title={aboutPageTitle}
           content={aboutPagePreviewLinkDescription}
           image={aboutPagePreviewImageUrl}
@@ -79,7 +79,7 @@ class IndexPage extends React.Component {
               {aboutPagePreviewLinkText}
             </Button>
           }
-        /> */}
+        />
         <PortfolioPreview
           title={portfolioPageTitle}
           content={portfolioPagePreviewLinkDescription}
