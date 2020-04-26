@@ -6,6 +6,13 @@
 
 .YellowSection {
   background-color: $color-yellow;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.Action {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+  width: 100%;
 }

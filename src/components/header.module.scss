@@ -1,80 +1,63 @@
 @import '../styles/variables';
 
 .Header {
-  background-color: $color-white;
+  position: relative;
+  z-index: 40;
 }
 
-.YellowSection {
-  background-color: $color-yellow;
-  height: 3rem;
+.BorderContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.HeaderContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.HeaderInnerContainer {
+  display: flex;
+  max-width: $width-wide;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .Logo {
   display: flex;
-  justify-content: center;
 
   > * {
-    width: 10rem;
+    width: 8rem;
     height: auto;
+  }
 
-    @media screen and (min-width: $width-medium) {
+  @media (min-width: $mq-large) {
+    padding-right: 4rem;
+
+    > * {
       width: 12rem;
     }
   }
 }
 
-.HeaderContainer {
-  padding: 1rem;
-  display: flex;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: $width-medium;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-
-  @media screen and (min-width: $width-medium) {
-    padding-top: 5rem;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .Navigation {
   list-style: none;
-  box-sizing: border-box;
-  padding-left: 2rem;
-  margin: 0;
-  order: 2;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 1 90%;
+  display: none;
 
-  @media screen and (min-width: $width-medium) {
-    z-index: 10;
-    padding: 3rem 1rem 3rem;
-    width: 100%;
-    max-width: $width-medium;
-    position: absolute;
-    order: 0;
+  @media (min-width: $mq-large) {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 }
 
 .Item {
   display: block;
-
-  + .Item {
-    margin-top: 2rem;
-
-    @media screen and (min-width: $width-medium) {
-      margin-top: 0;
-    }
-  }
-}
-
-.Logo {
-  position: relative;
-  z-index: 20;
 }

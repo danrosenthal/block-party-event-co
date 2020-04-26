@@ -5,9 +5,15 @@ import Text from '../components/text'
 
 export default function contentfulContentTransformer(contentfulContent) {
   const content = contentfulContent.content.map((item, index) => {
-    const { value } = item.content[0]
-    switch (item.nodeType) {
+    if (item.content == null || []) {
+      console.warn('skipped content type')
+      return null
+    }
+
+    const { value, nodeType } = item.content[0]
+    switch (nodeType) {
       case 'paragraph':
+      case 'text':
         return (
           <Text key={index}>
             <p>{value}</p>

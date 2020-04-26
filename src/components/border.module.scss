@@ -1,76 +1,13 @@
 @import '../styles/variables';
 
 .Border {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 0 0;
-  min-height: 44px;
-  background-color: $color-white;
-
-  @media screen and (min-width: 1200px) {
-    background-size: cover;
-  }
+  height: auto;
 }
 
-.yellowTop {
-  background-image: url("../images/border-top.png");
-
-  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
-    only screen and (-moz-min-device-pixel-ratio: 1.5),
-    only screen and (-o-min-device-pixel-ratio: 3/2),
-    only screen and (min-device-pixel-ratio: 1.5) {
-      background-image: url("../images/border-top-2x.png");
-  }
-
-  @media screen and (min-width: 1200px) {
-    background-position: 0 100%;
-  }
+.top {
+  margin-top: -1px;
 }
 
-.yellowBottom {
-  background-image: url("../images/border-bottom.png");
-  background-position: 0 100%;
-
-  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
-    only screen and (-moz-min-device-pixel-ratio: 1.5),
-    only screen and (-o-min-device-pixel-ratio: 3/2),
-    only screen and (min-device-pixel-ratio: 1.5) {
-      background-image: url("../images/border-bottom-2x.png");
-  }
-
-  @media screen and (min-width: 1200px) {
-    background-position: 0 0;
-  }
+.bottom {
+  margin-bottom: -1px;
 }
-
-.pinkTop {
-  background-image: url("../images/border-top-pink.png");
-
-  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
-    only screen and (-moz-min-device-pixel-ratio: 1.5),
-    only screen and (-o-min-device-pixel-ratio: 3/2),
-    only screen and (min-device-pixel-ratio: 1.5) {
-      background-image: url("../images/border-top-pink-2x.png");
-  }
-
-  @media screen and (min-width: 1200px) {
-    background-position: 0 100%;
-  }
-}
-
-.pinkBottom {
-  background-image: url("../images/border-bottom-pink.png");
-  background-position: 0 100%;
-
-  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
-    only screen and (-moz-min-device-pixel-ratio: 1.5),
-    only screen and (-o-min-device-pixel-ratio: 3/2),
-    only screen and (min-device-pixel-ratio: 1.5) {
-      background-image: url("../images/border-bottom-pink-2x.png");
-  }
-
-  @media screen and (min-width: 1200px) {
-    background-position: 0 0;
-  }
-}
-

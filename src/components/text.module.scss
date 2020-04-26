@@ -3,11 +3,12 @@
 .Text {
   line-height: 1.5;
   font-size: 16px;
-  font-family: "basic-sans";
+  font-family: 'basic-sans';
   font-weight: 300;
+  padding: 0.5rem 0;
 
-  p {
-    margin-bottom: 1.25em;
+  p + p {
+    margin-top: 1rem;
   }
 
   a {
@@ -15,7 +16,7 @@
     &:active,
     &:visited {
       color: $color-red;
-      transition: color ease-in .2s;
+      transition: color ease-in 0.2s;
     }
 
     &:hover {
@@ -25,8 +26,18 @@
 }
 
 .lead {
-  margin-top: 2rem;
-  font-size: 24px;
+  font-family: 'newzald-bold';
+  line-height: 1.125;
+  font-size: 30px;
+
+  @media (min-width: $mq-medium) {
+    font-size: 36px;
+  }
+}
+
+.impact {
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .centered {
@@ -34,13 +45,13 @@
 }
 
 .indented {
-  @media screen and (min-width: $width-small) {
+  @media screen and (min-width: $mq-small) {
     padding-left: 2rem;
   }
 }
 
 .indented.lead {
-  @media screen and (min-width: $width-small) {
+  @media screen and (min-width: $mq-small) {
     padding-left: 2rem;
   }
 }

@@ -8,6 +8,10 @@
 }
 
 .PageContainer {
-  padding: 2rem 1rem;
+  padding: 2rem 0 6rem;
   max-width: $width-medium;
+
+  > * + * {
+    margin-top: 2rem;
+  }
 }

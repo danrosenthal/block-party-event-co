@@ -1,25 +1,23 @@
 @import '../styles/variables';
 
+.FooterOuterContainer {
+  background-color: $color-white;
+}
+
 .Footer {
-  max-width: $width-medium;
-  margin: 0 auto;
-  background-color: $color-pink;
+  background-color: $color-yellow;
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-
-  @media screen and (min-width: $width-medium) {
-    flex-direction: row;
-  }
+  padding-bottom: 4rem;
 }
 
 .Logo {
-  width: 15rem;
-  margin-top: -1rem;
-  margin-bottom: -4rem;
+  width: 14rem;
 
-  @media screen and (min-width: $width-medium) {
+  @media screen and (min-width: $mq-medium) {
     margin: 0;
   }
 
@@ -28,24 +26,30 @@
   }
 }
 
-.PinkSection {
-  background-color: $color-pink;
+.YellowSection {
+  background-color: $color-yellow;
   color: $color-white;
-  height: 4rem;
 }
 
 .FooterContainer {
+  max-width: $width-small;
+  margin: 0 auto;
   list-style: none;
-  display: flex;
   width: 100%;
   justify-content: space-around;
-  padding: 3rem 1rem 4rem;
+  align-items: center;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   font-size: 18px;
   line-height: 1.5;
-  font-family: "basic-sans";
+  font-family: 'basic-sans';
   font-weight: 300;
-  margin: 0;
+  padding: 0;
+
+  @media (min-width: $mq-small) {
+    flex-direction: row;
+  }
 
   a {
     color: $color-white !important;
@@ -55,6 +59,7 @@
 .Item {
   display: flex;
   align-items: center;
+  padding-bottom: 1rem;
 }
 
 .Icon {
@@ -62,7 +67,7 @@
   height: 1.5rem;
   width: 1.5rem;
   display: inline-block;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 
   svg {
     width: 100%;

@@ -1,11 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import debounce from 'lodash/debounce'
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
-import Services from '../components/services'
+import Button from '../components/button'
 import Team from '../components/team'
-import BlogPreview from '../components/blogPreview'
+import PortfolioPreview from '../components/portfolioPreview'
 import Contact from '../components/contact'
 
 import * as PropTypes from 'prop-types'
@@ -14,167 +15,139 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 class IndexPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      medium: true,
+    }
+  }
+
+  componentDidMount() {
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize)
+  }
+
   render() {
-    const { data } = this.props
-    const {
-      heroContent,
-      heroImage,
-      servicesTitle,
-      servicesContent,
-      servicesSubtitle1,
-      servicesImage1,
-      servicesSubContent1,
-      servicesSubtitle2,
-      servicesImage2,
-      servicesSubContent2,
-      servicesSubtitle3,
-      servicesImage3,
-      servicesSubContent3,
-      teamTitle,
-      teamContent,
-      teamImage,
-      blogTitle,
-      contactTitle,
-    } = data.contentfulPage
-    const { title, description } = data.allContentfulPost.edges[0].node
+    const { medium } = this.state
+    const [
+      {
+        linkDescription: {
+          linkDescription: servicesPagePreviewLinkDescription,
+        },
+        linkText: servicesPagePreviewLinkText,
+        linkImage: {
+          file: { url: servicesPagePreviewImageUrl },
+        },
+      },
+      {
+        linkDescription: { linkDescription: aboutPagePreviewLinkDescription },
+        linkText: aboutPagePreviewLinkText,
+        linkImage: {
+          file: { url: aboutPagePreviewImageUrl },
+        },
+        title: aboutPageTitle,
+      },
+      {
+        linkDescription: {
+          linkDescription: portfolioPagePreviewLinkDescription,
+        },
+        linkText: portfolioPagePreviewLinkText,
+        linkImage: {
+          file: { url: portfolioPagePreviewImageUrl },
+        },
+        title: portfolioPageTitle,
+      },
+    ] = this.props.data.contentfulHomePage.pages
+
     return (
       <Layout>
         <Hero
-          spaced
-          content={contentfulContentTransformer(heroContent)}
-          image={heroImage.file.url}
+          content={servicesPagePreviewLinkDescription}
+          image={servicesPagePreviewImageUrl}
+          button={
+            <Button primary url="/services">
+              {servicesPagePreviewLinkText}
+            </Button>
+          }
         />
-        <Services
-          title={servicesTitle}
-          content={contentfulContentTransformer(servicesContent)}
-          subTitle1={servicesSubtitle1}
-          subContent1={contentfulContentTransformer(servicesSubContent1)}
-          subImage1={servicesImage1.file.url}
-          subTitle2={servicesSubtitle2}
-          subContent2={contentfulContentTransformer(servicesSubContent2)}
-          subImage2={servicesImage2.file.url}
-          subTitle3={servicesSubtitle3}
-          subContent3={contentfulContentTransformer(servicesSubContent3)}
-          subImage3={servicesImage3.file.url}
+        {/* <Team
+          title={aboutPageTitle}
+          content={aboutPagePreviewLinkDescription}
+          image={aboutPagePreviewImageUrl}
+          button={
+            <Button url="/about" primary>
+              {aboutPagePreviewLinkText}
+            </Button>
+          }
+        /> */}
+        <PortfolioPreview
+          title={portfolioPageTitle}
+          content={portfolioPagePreviewLinkDescription}
+          image={portfolioPagePreviewImageUrl}
+          button={
+            <Button outline={!medium} primary={medium} url="/services">
+              {portfolioPagePreviewLinkText}
+            </Button>
+          }
         />
-        <Team
-          title={teamTitle}
-          content={contentfulContentTransformer(teamContent)}
-          image={teamImage.file.url}
-        />
-        <BlogPreview
-          title={blogTitle}
-          post={{
-            title,
-            description,
-          }}
-        />
-        <Contact dots title={contactTitle} />
+        <Contact dots={false} />
       </Layout>
     )
   }
-}
 
-function contentfulContentTransformer(contentArray) {
-  const content = contentArray.content.map((item, index) => {
-    return <p key={index}>{item.content[0].value}</p>
-  })
-  return <>{content}</>
+  handleResize = debounce(
+    () => {
+      const { matches } = window.matchMedia('(min-width: 64em)')
+      this.setState({ medium: !matches })
+    },
+    40,
+    { leading: true, trailing: true, maxWait: 40 }
+  )
 }
 
 IndexPage.propTypes = propTypes
 
-export const pageQuery = graphql`
-  query pageQuery {
-    contentfulPage(contentful_id: { eq: "cq71OLaGk0aKYMy6QwgMu" }) {
-      pageSlug
-      heroContent {
-        content {
-          content {
-            value
+export const homePageQuery = graphql`
+  query homePageQuery {
+    contentfulHomePage {
+      pages {
+        ... on ContentfulServicesPage {
+          id
+          linkDescription {
+            linkDescription
           }
-        }
-      }
-      heroImage {
-        file {
-          url
-        }
-      }
-      servicesTitle
-      servicesContent {
-        content {
-          content {
-            value
+          linkImage {
+            file {
+              url
+            }
           }
+          linkText
         }
-      }
-      servicesSubtitle1
-      servicesImage1 {
-        file {
-          url
-        }
-      }
-      servicesSubContent1 {
-        content {
-          content {
-            value
-          }
-        }
-      }
-      servicesSubtitle2
-      servicesImage2 {
-        file {
-          url
-        }
-      }
-      servicesSubContent2 {
-        content {
-          content {
-            value
-          }
-        }
-      }
-      servicesSubtitle3
-      servicesImage3 {
-        file {
-          url
-        }
-      }
-      servicesSubContent3 {
-        content {
-          content {
-            value
-          }
-        }
-      }
-      teamTitle
-      teamContent {
-        content {
-          content {
-            value
-          }
-        }
-      }
-      teamImage {
-        file {
-          url
-        }
-      }
-      blogTitle
-      formTitle
-      formContent {
-        content {
-          content {
-            value
-          }
-        }
-      }
-    }
-    allContentfulPost(sort: { fields: createdAt, order: DESC }, limit: 1) {
-      edges {
-        node {
+        ... on ContentfulAboutPage {
           title
-          description
+          id
+          linkDescription {
+            linkDescription
+          }
+          linkImage {
+            file {
+              url
+            }
+          }
+          linkText
+        }
+        ... on ContentfulPortfolioPage {
+          title
+          id
+          linkDescription {
+            linkDescription
+          }
+          linkImage {
+            file {
+              url
+            }
+          }
+          linkText
         }
       }
     }

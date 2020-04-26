@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'newzald-bold';
-     src: url('../fonts/NewzaldBold.otf') format('opentype');
+  src: url('../fonts/NewzaldBold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -10,15 +10,21 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: $color-pink;
+  background-color: $color-yellow;
   color: $color-black;
 }
 
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   margin: 0;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }

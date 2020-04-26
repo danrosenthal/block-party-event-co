@@ -6,7 +6,7 @@ import Media from '../components/media'
 
 import styles from './team.module.scss'
 
-export default function Team({ title, content, image }) {
+export default function Team({ title, content, image, button }) {
   const imageMarkup = (
     <div className={styles.Figure}>
       <div className={styles.Image}>
@@ -52,9 +52,10 @@ export default function Team({ title, content, image }) {
 
   return (
     <section className={styles.Team}>
-      <Media image={imageMarkup} width="full">
+      <Media image={imageMarkup} width="wide">
         <Heading level="1">{title}</Heading>
-        <Text indented>{content}</Text>
+        <Text impact>{content}</Text>
+        <div className={styles.Action}>{button}</div>
       </Media>
     </section>
   )

@@ -2,10 +2,7 @@
 
 .Button {
   text-decoration: none;
-  background-color: $color-red;
-  padding: .5rem 1rem;
-  color: $color-white !important;
-  font-family: "basic-sans";
+  font-family: 'basic-sans';
   transition: background-color 200ms ease;
   font-weight: 600;
   font-size: 16px;
@@ -13,14 +10,28 @@
   letter-spacing: 2px;
   cursor: pointer;
   text-align: center;
-  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
 
-  @media screen and (min-width: $width-small) {
-    padding: .75rem 1.25rem;
-  }
+.primary {
+  background-color: $color-pink;
+  color: $color-white !important;
+  border: none;
 
   &:focus,
   &:hover {
-    background-color: darken($color-red, 15%);
+    background-color: darken($color-pink, 5%);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: $color-white !important;
+  border: 2px solid $color-white;
+
+  &:focus,
+  &:hover {
+    background-color: rgba($color-pink, 0.9);
   }
 }

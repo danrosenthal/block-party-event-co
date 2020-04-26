@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import Heading from '../components/heading'
 import Button from '../components/button'
+import TextField from '../components/textField'
 
 import styles from './contact.module.scss'
 
@@ -37,8 +38,6 @@ export default function Contact({ dots }) {
     </div>
   )
 
-  const textFieldClassName = classNames(styles.tall, styles.TextField)
-
   const className = classNames(dots && styles.dots, styles.Contact)
 
   return (
@@ -53,51 +52,22 @@ export default function Contact({ dots }) {
             action="/thank-you"
           >
             <div className={styles.FormSection}>
-              <label htmlFor="name">
-                <span className={styles.FormLabel}>Name</span>
-                <input
-                  className={styles.TextField}
-                  type="text"
-                  id="name"
-                  name="name"
-                />
-              </label>
+              <TextField label="Name" name="name" type="text" />
             </div>
             <div className={styles.FormSection}>
-              <label htmlFor="email">
-                <span className={styles.FormLabel}>Email address</span>
-                <input
-                  className={styles.TextField}
-                  type="email"
-                  id="email"
-                  name="email"
-                />
-              </label>
+              <TextField label="Email address" name="email" type="email" />
             </div>
             <div className={styles.FormSection}>
-              <label htmlFor="phone">
-                <span className={styles.FormLabel}>Phone number</span>
-                <input
-                  className={styles.TextField}
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                />
-              </label>
+              <TextField label="Phone number" name="phone" type="tel" />
             </div>
             <div className={styles.FormSection}>
-              <label htmlFor="message">
-                <span className={styles.FormLabel}>Message</span>
-                <textarea
-                  className={textFieldClassName}
-                  id="message"
-                  name="message"
-                />
-              </label>
+              <TextField label="Message" name="message" tall={true} />
             </div>
             <div className={styles.FormSection}>
               <input type="hidden" name="form-name" value="contact" />
-              <Button submit>Submit</Button>
+              <Button submit primary>
+                Submit
+              </Button>
             </div>
           </form>
         </div>

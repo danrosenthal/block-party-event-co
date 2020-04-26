@@ -1,7 +1,7 @@
 @import '../styles/variables';
 
 .Team {
-  padding: 8rem 0;
+  padding: 6rem 0 6rem;
   background-color: $color-white;
 }
 
@@ -14,7 +14,7 @@ $image-spacing-unit: 1.5rem;
 .LeftBlock,
 .RightBlock,
 .Dots {
-  width: 70%
+  width: 70%;
 }
 
 .Image {
@@ -43,4 +43,9 @@ $image-spacing-unit: 1.5rem;
   z-index: 1;
   bottom: $image-spacing-unit * -1;
   left: 0;
+}
+
+.Action {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
