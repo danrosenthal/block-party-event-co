@@ -45,6 +45,10 @@ const Layout = ({ children }) => (
           title={data.allContentfulMeta.edges[0].node.title}
           meta={[
             {
+              name: 'viewport',
+              content: 'width=device-width, initial-scale=1'
+            },
+            {
               name: 'description',
               content: data.allContentfulMeta.edges[0].node.description,
             },
@@ -110,3 +114,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+

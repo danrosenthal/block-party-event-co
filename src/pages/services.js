@@ -24,13 +24,12 @@ class ServicesPage extends React.Component {
       services: [design, coordination, planning],
     } = this.props.data.contentfulServicesPage
 
-    console.log([design, coordination, planning])
-
     return (
       <Layout>
         <Hero
           title={title}
           impact={true}
+          short={true}
           lead={false}
           content={contentfulContentTransformer(content)}
           image={heroImageUrl}

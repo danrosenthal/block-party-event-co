@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import styles from './hero.module.scss'
 
@@ -13,6 +14,7 @@ export default function Hero({
   button,
   lead = true,
   impact,
+  short,
 }) {
   const headingMarkup = title && (
     <Heading level="1" centered>
@@ -33,9 +35,11 @@ export default function Hero({
     </div>
   )
 
+  const className = classNames(styles.Image, short && styles.short);
+
   return (
     <section className={styles.Hero}>
-      <figure className={styles.Figure}>
+      <figure className={className}>
         <div className={styles.Image}>
           <img
             src={image}
@@ -55,3 +59,4 @@ export default function Hero({
     </section>
   )
 }
+

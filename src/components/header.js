@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import classNames from 'classnames'
+import { Transition } from 'react-transition-group'
 
 import styles from './header.module.scss'
 
@@ -7,7 +9,17 @@ import Border from '../components/border'
 import Button from '../components/button'
 
 export default function Header({ postLink, showNav }) {
-  const navigationMarkup = showNav ? (
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleMenuClick = () => {
+    if (menuOpen === true) {
+      setMenuOpen(false)
+    } else {
+      setMenuOpen(true)
+    }
+  }
+
+  const desktopNavigationmarkup = (
     <div className={styles.Navigation}>
       <div className={styles.Item}>
         <Button outline url="/about">
@@ -25,16 +37,28 @@ export default function Header({ postLink, showNav }) {
         </Button>
       </div>
       <div className={styles.Item}>
-        <Button outline url="/blog">
-          Blog
-        </Button>
-      </div>
-      <div className={styles.Item}>
         <Button outline url="/contact">
           Contact
         </Button>
       </div>
     </div>
+  )
+
+  const mobileNavigationMarkup = (
+    <div className={styles.MobileNavigation}>
+      <div className={styles.Item}>
+        <Button primary onClick={handleMenuClick}>
+          Menu
+        </Button>
+      </div>
+    </div>
+  )
+
+  const navigationMarkup = showNav ? (
+    <>
+      {desktopNavigationmarkup}
+      {mobileNavigationMarkup}
+    </>
   ) : null
 
   const logoMarkup = (
@@ -67,6 +91,45 @@ export default function Header({ postLink, showNav }) {
           {navigationMarkup}
         </div>
       </div>
+      <Transition timeout={250} in={menuOpen} appear>
+        {state => {
+          const sideNavigationClassName = classNames(
+            styles.SideNavigation,
+            styles[state],
+          );
+          return (
+            <div className={sideNavigationClassName}>
+              <div className={styles.SideNavigationInnerContainer}>
+                <div className={styles.Item}>
+                  <Button primary url="/about">
+                    About
+                  </Button>
+                </div>
+                <div className={styles.Item}>
+                  <Button primary url="/services">
+                    Services
+                  </Button>
+                </div>
+                <div className={styles.Item}>
+                  <Button primary url="/portfolio">
+                    Portfolio
+                  </Button>
+                </div>
+                <div className={styles.Item}>
+                  <Button primary url="/contact">
+                    Contact
+                  </Button>
+                </div>
+              </div>
+              <div
+                role="button"
+                onClick={handleMenuClick}
+                className={styles.SideNavigationBackdrop}
+              />
+            </div>
+          )
+        }}
+      </Transition>
     </div>
   )
 }

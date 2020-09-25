@@ -2,6 +2,7 @@
 
 .Hero {
   background-color: $color-white;
+  position: relative;
 }
 
 .Figure {
@@ -17,16 +18,32 @@
   max-height: 15rem;
   overflow: hidden;
 
+  &.short {
+    max-height: 8rem;
+  }
+
   @media (min-width: $mq-tiny) {
     max-height: 22rem;
+
+    &.short {
+      max-height: 11rem;
+    }
   }
 
   @media (min-width: $mq-small) {
     max-height: 30rem;
+
+    &.short {
+      max-height: 15rem;
+    }
   }
 
   @media (min-width: $mq-large) {
     max-height: 55rem;
+
+    &.short {
+      max-height: 32rem;
+    }
   }
 
   img {

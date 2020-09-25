@@ -56,6 +56,10 @@
   }
 }
 
+.FooterContainer + .FooterContainer {
+  padding-top: 1rem;
+}
+
 .Item {
   display: flex;
   align-items: center;

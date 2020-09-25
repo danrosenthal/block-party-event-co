@@ -19,7 +19,15 @@
   left: 0;
   display: flex;
   justify-content: center;
-  padding-top: 4rem;
+  padding-top: 2rem;
+
+  @media (min-width: $mq-small) {
+    padding-top: 3rem;
+  }
+
+  @media (min-width: $mq-medium) {
+    padding-top: 4rem;
+  }
 }
 
 .HeaderInnerContainer {
@@ -27,6 +35,7 @@
   max-width: $width-wide;
   width: 100%;
   padding: 0 2rem;
+  margin-top: -1rem;
 }
 
 .Logo {
@@ -38,7 +47,7 @@
   }
 
   @media (min-width: $mq-large) {
-    padding-right: 4rem;
+    padding-right: 6rem;
 
     > * {
       width: 12rem;
@@ -58,6 +67,82 @@
   }
 }
 
+.MobileNavigation {
+  list-style: none;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 1 90%;
+  display: flex;
+
+  @media (min-width: $mq-large) {
+    display: none;
+  }
+}
+
 .Item {
   display: block;
+  padding-left: 2rem;
 }
+
+.SideNavigation {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  z-index: 50;
+  
+
+  &.exited {
+    display: none;
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  &.entering,
+  &.exiting {
+    display: block;
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+
+  &.entered {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .Item {
+    padding-bottom: 3rem;
+  }
+}
+
+.SideNavigationInnerContainer {
+  border-top-left-radius: 8px;
+  box-shadow: 1px 1px 5px $color-gray;
+  background-color: $color-white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 13rem;
+  z-index: 52;
+}
+
+.SideNavigationBackdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 51;
+}
+

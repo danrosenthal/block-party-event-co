@@ -61,6 +61,23 @@ export default function Footer({ children }) {
           <div className={styles.Logo}>{logoMarkup}</div>
           <ul className={styles.FooterContainer}>
             <li className={styles.Item}>
+              <a href="/about">About</a>
+            </li>
+            <li className={styles.Item}>
+              <a href="/services">Services</a>
+            </li>
+            <li className={styles.Item}>
+              <a href="/portfolio">Portfolio</a>
+            </li>
+            <li className={styles.Item}>
+              <a href="/blog">Blog</a>
+            </li>
+            <li className={styles.Item}>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+          <ul className={styles.FooterContainer}>
+            <li className={styles.Item}>
               <span className={styles.Icon}>{phoneMarkup}</span>
               <a href="tel:5138352689">513.835.2689</a>
             </li>

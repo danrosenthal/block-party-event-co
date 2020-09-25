@@ -22,10 +22,15 @@ class AboutPage extends React.Component {
       },
       content,
     } = this.props.data.contentfulAboutPage
-
     return (
       <Layout>
-        <Hero title={title} impact={true} lead={false} image={heroImageUrl} />
+        <Hero
+          title={title}
+          impact={true}
+          lead={false}
+          image={heroImageUrl}
+          short={true}
+        />
         <Page>{contentfulContentTransformer(content)}</Page>
       </Layout>
     )
@@ -37,20 +42,49 @@ AboutPage.propTypes = propTypes
 export const aboutPageQuery = graphql`
   query aboutPageQuery {
     contentfulAboutPage {
-      content {
-        content {
-          content {
-            value
-            nodeType
-          }
-        }
-      }
+      title
       heroImage {
         file {
           url
         }
       }
-      title
+      content {
+        content {
+          data {
+            target {
+              fields {
+                file {
+                  en_US {
+                    url
+                    fileName
+                  }
+                }
+                description {
+                  en_US
+                }
+                heroImage {
+                  en_US {
+                    fields {
+                      file {
+                        en_US {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+                title {
+                  en_US
+                }
+              }
+            }
+          }
+          content {
+            nodeType
+            value
+          }
+        }
+      }
     }
   }
 `

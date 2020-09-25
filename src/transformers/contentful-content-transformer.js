@@ -1,45 +1,54 @@
 import React from 'react'
 
 import Heading from '../components/heading'
+import Media from '../components/media'
 import Text from '../components/text'
 
 export default function contentfulContentTransformer(contentfulContent) {
-  const content = contentfulContent.content.map((item, index) => {
-    if (item.content == null || []) {
-      console.warn('skipped content type')
-      return null
-    }
+  return (
+    <>
+      {contentfulContent.content.map((element, index) => {
+        let markup = null
+        if (element.content.length) {
+          const { value } = element.content[0]
+          markup = (
+            <Text key={index}>
+              <p>{value}</p>
+            </Text>
+          )
+        } else if (element.data.target != null) {
+          const { file, description, heroImage, title } = element.data.target.fields
 
-    const { value, nodeType } = item.content[0]
-    switch (nodeType) {
-      case 'paragraph':
-      case 'text':
-        return (
-          <Text key={index}>
-            <p>{value}</p>
-          </Text>
-        )
-      case 'heading-1':
-        return (
-          <Heading key={index} level="1">
-            {value}
-          </Heading>
-        )
-      case 'heading-2':
-        return (
-          <Heading key={index} level="2">
-            {value}
-          </Heading>
-        )
-      case 'heading-3':
-        return (
-          <Heading key={index} level="3">
-            {value}
-          </Heading>
-        )
-      default:
-        return <p key={index}>{value}</p>
-    }
-  })
-  return <>{content}</>
+          const heroImageMarkup = heroImage && (
+            <img src={heroImage.en_US.fields.file.en_US.url} alt={title.en_US} />
+          )
+          const descriptionMarkup = description && (
+            <Text>
+              <p>{description.en_US}</p>
+            </Text>
+          )
+          const imageMarkup = file && <img src={file.en_US.url} alt={title.en_US} />
+          const headingMarkup = (
+            <Heading level="2">
+              {title.en_US}
+            </Heading>
+          );
+
+          const dataMarkup = heroImage ? (
+            <Media width="full" image={heroImageMarkup} key={index}>
+              {headingMarkup}
+              {descriptionMarkup}
+            </Media>
+          ) : (
+            <div key={index}>
+              {imageMarkup}
+              {descriptionMarkup}
+            </div>
+          )
+          markup = dataMarkup;
+        }
+        return <>{markup}</>
+      })}
+    </>
+  )
 }
