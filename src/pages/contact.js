@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Text from '../components/text'
 import Page from '../components/page'
 import Hero from '../components/hero'
 import Contact from '../components/contact'
