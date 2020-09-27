@@ -52,7 +52,7 @@ export default function Team({ title, content, image, button }) {
 
   return (
     <section className={styles.Team}>
-      <Media image={imageMarkup} width="wide">
+      <Media image={imageMarkup} >
         <Heading level="1">{title}</Heading>
         <Text impact>{content}</Text>
         <div className={styles.Action}>{button}</div>
