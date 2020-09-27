@@ -5,6 +5,7 @@ import contentfulContentTransformer from '../transformers/contentful-content-tra
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
+import Page from '../components/page'
 import Services from '../components/services'
 
 import * as PropTypes from 'prop-types'
@@ -31,9 +32,11 @@ class ServicesPage extends React.Component {
           impact={true}
           short={true}
           lead={false}
-          content={contentfulContentTransformer(content)}
           image={heroImageUrl}
         />
+        <Page>
+          {contentfulContentTransformer(content)}
+        </Page>
         <Services
           subTitle1={design.title}
           subContent1={design.description.description}

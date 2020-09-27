@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import Heading from '../components/heading'

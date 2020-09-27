@@ -29,11 +29,9 @@ class ContactPage extends React.Component {
       <Layout>
         <Hero title={title} impact={true} lead={false} image={heroImageUrl} short={true} />
         <Page>
-          <Text centered lead>
-            <p>We'd love to chat. Please reach out.</p>
-          </Text>
-          <Contact title="Contact" />
+          {contentfulContentTransformer(content)}
         </Page>
+        <Contact title="Contact" />
       </Layout>
     );
   }
