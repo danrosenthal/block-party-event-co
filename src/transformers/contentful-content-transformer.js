@@ -8,35 +8,32 @@ import Media from '../components/media'
 import Text from '../components/text'
 
 export default function contentfulContentTransformer(content) {
+  const locale = 'en-US'
   const options = {
     renderNode: {
+      [BLOCKS.DOCUMENT]: (_node, children) => {
+        return <Text>{children}</Text>
+      },
       [BLOCKS.EMBEDDED_ENTRY]: node => {
-        const { title, heroImage, description } = node.data.target.fields
-        const headingMarkup = <Heading level="2">{title['en-US']}</Heading>
-        const heroImageMarkup = heroImage && (
-          <img
-            src={heroImage['en-US'].fields.file['en-US'].url}
-            alt={title['en-US']}
-          />
-        )
-        const descriptionMarkup = description && (
-          <Text>
-            <p>{description['en-US']}</p>
-          </Text>
-        )
+        const { title, heroImage, description } = node.data.target.fields;
         return (
-          <Media width="full" image={heroImageMarkup}>
-            {headingMarkup}
-            {descriptionMarkup}
+          <Media
+            width="full"
+            image={
+              <img
+                src={heroImage[locale].fields.file[locale].url}
+                alt={title[locale]}
+              />
+            }
+          >
+            <Heading level="2">{title[locale]}</Heading>
+            <p>{description[locale]}</p>
           </Media>
         )
       },
       [BLOCKS.EMBEDDED_ASSET]: node => {
-        const { title, file } = node.data.target.fields
-        return <img src={file['en-US'].url} alt={title['en-US']} />
-      },
-      [BLOCKS.PARAGRAPH]: (_node, children) => {
-        return <Text>{children}</Text>
+        const { title, file } = node.data.target.fields;
+        return <img src={file[locale].url} alt={title[locale]} />
       },
       [BLOCKS.HEADING_1]: (_node, children) => {
         return <Heading level="1">{children}</Heading>
@@ -59,5 +56,5 @@ export default function contentfulContentTransformer(content) {
     },
   }
 
-  return documentToReactComponents(JSON.parse(content.content), options);
+  return documentToReactComponents(JSON.parse(content.content), options)
 }
