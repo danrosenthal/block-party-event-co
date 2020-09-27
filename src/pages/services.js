@@ -62,11 +62,7 @@ export const servicesPageQuery = graphql`
         }
       }
       content {
-        content {
-          content {
-            value
-          }
-        }
+        content
       }
       services {
         title

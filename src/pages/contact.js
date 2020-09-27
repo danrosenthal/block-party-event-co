@@ -45,12 +45,7 @@ export const contactPageQuery = graphql`
   query contactPageQuery {
     contentfulContactPage {
       content {
-        content {
-          content {
-            value
-            nodeType
-          }
-        }
+        content
       }
       heroImage {
         file {
