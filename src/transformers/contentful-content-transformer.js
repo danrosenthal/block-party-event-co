@@ -19,6 +19,7 @@ export default function contentfulContentTransformer(content) {
         return (
           <Media
             width="full"
+            padding={false}
             image={
               <img
                 src={heroImage[locale].fields.file[locale].url}

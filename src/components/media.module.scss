@@ -19,15 +19,11 @@
 }
 
 .Image {
-  padding: 0 1rem 4rem 1rem;
+  padding: 0 1rem 4rem 0;
   flex: 1 0 100%;
 
   @media screen and (min-width: $mq-small) {
-    padding: 0 3rem 4rem 3rem;
-  }
-
-  @media screen and (min-width: $mq-small) {
-    padding: 0 8% 2rem 1rem;
+    padding: 0 8% 2rem 0;
     flex: 1 0 30%;
   }
 }
@@ -45,7 +41,7 @@
   }
 
   .Image {
-    padding: 0 1rem 2rem 4%;
+    padding: 0 0 2rem 4%;
   }
 }
 
