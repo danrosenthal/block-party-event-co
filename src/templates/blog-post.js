@@ -59,8 +59,5 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulPage(contentful_id: { eq: "cq71OLaGk0aKYMy6QwgMu" }) {
-      formTitle
-    }
   }
 `

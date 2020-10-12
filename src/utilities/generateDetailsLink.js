@@ -1,5 +1,5 @@
-export default function generateBlogPostLink(title) {
-  return `/blog/${slugify(title)}`
+export default function generateDetailsLink(title, root = 'blog') {
+  return `/${root}/${slugify(title)}`
 }
 
 function slugify(string) {

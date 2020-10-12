@@ -85,7 +85,7 @@ class IndexPage extends React.Component {
           content={portfolioPagePreviewLinkDescription}
           image={portfolioPagePreviewImageUrl}
           button={
-            <Button outline={!medium} primary={medium} url="/services">
+            <Button outline={!medium} primary={medium} url="/portfolio">
               {portfolioPagePreviewLinkText}
             </Button>
           }

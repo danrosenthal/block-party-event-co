@@ -1,5 +1,5 @@
 import React from 'react'
-import generateBlogPostLink from '../utilities/generateBlogPostLink'
+import generateDetailsLink from '../utilities/generateDetailsLink'
 
 import styles from './blogPreview.module.scss'
 
@@ -25,7 +25,7 @@ export default function Blog({ title, post }) {
             <p>{post.description}</p>
           </Text>
           <div className={styles.Action}>
-            <Button outline url={generateBlogPostLink(post.title)}>
+            <Button outline url={generateDetailsLink(post.title)}>
               read more
             </Button>
           </div>

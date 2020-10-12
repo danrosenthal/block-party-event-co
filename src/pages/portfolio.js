@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Page from '../components/page'
+import Feed from '../components/feed'
 
 import * as PropTypes from 'prop-types'
 
@@ -13,7 +14,7 @@ const propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-class AboutPage extends React.Component {
+class PortfolioPage extends React.Component {
   render() {
     const {
       title,
@@ -21,7 +22,8 @@ class AboutPage extends React.Component {
         file: { url: heroImageUrl },
       },
       content,
-    } = this.props.data.contentfulAboutPage
+      portfolioItems,
+    } = this.props.data.contentfulPortfolioPage
 
     return (
       <Layout>
@@ -35,16 +37,17 @@ class AboutPage extends React.Component {
         <Page>
           {contentfulContentTransformer(content)}
         </Page>
+        <Feed items={portfolioItems}></Feed>
       </Layout>
     )
   }
 }
 
-AboutPage.propTypes = propTypes
+PortfolioPage.propTypes = propTypes
 
-export const aboutPageQuery = graphql`
-  query aboutPageQuery {
-    contentfulAboutPage {
+export const portfolioPageQuery = graphql`
+  query portfolioPageQuery {
+    contentfulPortfolioPage {
       title
       heroImage {
         file {
@@ -54,8 +57,16 @@ export const aboutPageQuery = graphql`
       content {
         content
       }
+      portfolioItems {
+        title
+        heroImage {
+          file {
+            url
+          }
+        }
+      }
     }
   }
 `
 
-export default AboutPage
+export default PortfolioPage

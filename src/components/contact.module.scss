@@ -65,6 +65,7 @@ $image-spacing-unit: 1.5rem;
   margin: 1.5rem;
   position: relative;
   z-index: 3;
+  border-radius: 2px;
 
   @media screen and (min-width: $mq-small) {
     margin: 0 auto;

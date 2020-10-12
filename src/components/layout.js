@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import generateBlogPostLink from '../utilities/generateBlogPostLink'
+import generateDetailsLink from '../utilities/generateDetailsLink'
 
 import { StaticQuery, graphql } from 'gatsby'
 import Footer from '../components/footer'
@@ -99,7 +99,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header
-          postLink={generateBlogPostLink(data.allPost.edges[0].node.title)}
+          postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
           showNav
         />
         {children}
