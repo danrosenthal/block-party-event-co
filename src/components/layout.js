@@ -98,12 +98,14 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header
-          postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
-          showNav
-        />
-        {children}
-        <Footer />
+        <div id="pageContainer">
+          <Header
+            postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
+            showNav
+          />
+          {children}
+          <Footer />
+        </div>
       </>
     )}
   />
