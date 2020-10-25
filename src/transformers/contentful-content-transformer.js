@@ -15,7 +15,7 @@ export default function contentfulContentTransformer(content) {
         return <Text>{children}</Text>
       },
       [BLOCKS.EMBEDDED_ENTRY]: node => {
-        const { title, heroImage, description } = node.data.target.fields;
+        const { title = '', heroImage, description } = node.data.target.fields;
         return (
           <Media
             width="full"

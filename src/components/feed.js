@@ -10,7 +10,7 @@ export default function Feed({ children, items }) {
     return (
       <a className={styles.FeedItem} href={generateDetailsLink(item.title, 'portfolio')}>
         <div className={styles.ItemContent}>
-          <Heading level="1" centered={true}>
+          <Heading level="2" centered={true}>
             {item.title}
           </Heading>
         </div>

@@ -108,19 +108,19 @@ export default function Services({
 
   return (
     <div className={styles.Services}>
-      <Media image={designImage}  pushRight>
+      <Media image={designImage}>
         <Heading level="2">{subTitle1}</Heading>
         <Text indented impact>
           {subContent1}
         </Text>
       </Media>
-      <Media  image={planningImage} rightAligned pushLeft>
+      <Media  image={planningImage} rightAligned>
         <Heading level="2">{subTitle2}</Heading>
         <Text indented impact>
           {subContent2}
         </Text>
       </Media>
-      <Media  image={coordinationImage} pushRight>
+      <Media  image={coordinationImage}>
         <Heading level="2">{subTitle3}</Heading>
         <Text indented impact>
           {subContent3}
