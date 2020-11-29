@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Page from '../components/page'
+import Gallery from '../components/gallery'
 
 import * as PropTypes from 'prop-types'
 
@@ -15,13 +16,16 @@ const propTypes = {
 
 class AboutPage extends React.Component {
   render() {
+    const { contentfulAboutPage } = this.props.data;
     const {
       title,
       heroImage: {
         file: { url: heroImageUrl },
       },
       content,
-    } = this.props.data.contentfulAboutPage
+      gallery,
+    } = contentfulAboutPage;
+    
 
     return (
       <Layout>
@@ -35,6 +39,7 @@ class AboutPage extends React.Component {
         <Page>
           {contentfulContentTransformer(content)}
         </Page>
+        <Gallery images={gallery} />
       </Layout>
     )
   }
@@ -46,6 +51,14 @@ export const aboutPageQuery = graphql`
   query aboutPageQuery {
     contentfulAboutPage {
       title
+      gallery {
+        file {
+          url
+        }
+        fixed {
+          aspectRatio
+        }
+      }
       heroImage {
         file {
           url

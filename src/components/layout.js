@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import SimpleReactLightbox from "simple-react-lightbox";
 
 import generateDetailsLink from '../utilities/generateDetailsLink'
 
@@ -98,14 +99,16 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <div id="pageContainer">
-          <Header
-            postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
-            showNav
-          />
-          {children}
-          <Footer />
-        </div>
+        <SimpleReactLightbox>
+          <div id="pageContainer">
+            <Header
+              postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
+              showNav
+            />
+            {children}
+            <Footer />
+          </div>
+        </SimpleReactLightbox>
       </>
     )}
   />

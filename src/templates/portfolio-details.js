@@ -3,12 +3,11 @@ import React from 'react'
 import Layout from '../components/layout'
 import Page from '../components/page'
 import Hero from '../components/hero'
-import Text from '../components/text'
-import Heading from '../components/heading'
-
-import styles from './blog-post.module.scss'
+import Gallery from '../components/gallery'
 
 import * as PropTypes from 'prop-types'
+
+import contentfulContentTransformer from '../transformers/contentful-content-transformer'
 
 const propTypes = {
   data: PropTypes.object.isRequired,
@@ -17,8 +16,10 @@ const propTypes = {
 class PortfolioDetailsTemplate extends React.Component {
   render() {
     const { contentfulPortfolio } = this.props.data
-    const { heroImage: { file: { url }, description },
-      title
+    const { heroImage: { file: { url } },
+      title,
+      content,
+      gallery,
     } = contentfulPortfolio;
     const imageMarkup = contentfulPortfolio.gallery.map((item) => {
       return <img src={item.file.url} />
@@ -26,12 +27,10 @@ class PortfolioDetailsTemplate extends React.Component {
     return (
       <Layout>
         <Hero title={title} impact={true} lead={true} image={url} short={true} />
-          <Page>
-            {imageMarkup}
-            <Text>
-              <p>{description}</p>
-            </Text>
-          </Page>
+        <Page>
+          {contentfulContentTransformer(content)}
+        </Page>
+        <Gallery images={gallery} />
       </Layout >
     )
   }
@@ -50,12 +49,18 @@ export const pageQuery = graphql`
         file {
           url
         }
+        fixed {
+          aspectRatio
+        }
       }
       heroImage {
         file {
           url
         }
         description
+      }
+      content {
+        content
       }
     }
   }
