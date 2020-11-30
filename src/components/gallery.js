@@ -4,58 +4,47 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import styles from './gallery.module.scss'
 
 export default function Gallery({ images }) {
-  // const columns = [[],[],[]]
-  // let columnWithPortrait = null;
+  function addEntry(size, image) {
+    columns.push({
+      size,
+      entries: [<img src={image.file.url} />]
+    })
+  };
+  const columns = [];
+  images.forEach(image => {
+    if (columns[columns.length - 1] == null) {
+      if (image.fixed.aspectRatio > 1) {
+        addEntry(1, image)
+      } else {
+        addEntry(2, image)
+      }
+    } else if (columns[columns.length - 1].size === 1) {
+      if (image.fixed.aspectRatio > 1) {
+        columns[columns.length - 1].entries.push(<img src={image.file.url} />)
+        columns[columns.length - 1].size = 2;
+      } else {
+        addEntry(2, image)
+      }
+    } else {
+      if (image.fixed.aspectRatio > 1) {
+        addEntry(1, image)
+      } else {
+        addEntry(2, image)
+      }
+    }
+  });
 
-  // let n = 0;
-  // let column = 0;
-  // while (n < images.length) {
-  //   const {file: {url}, fixed: {aspectRatio}} = images[n];
-  //   columns[column].push({url, isPortrait})
-  //   n++;
-  //   if (column < 2) {
-  //     // isPortrait ? 
-      
-  //   } else {
-  //     column = 0;
-  //   }
-  // }
-
-  // console.log(columns);`
-
-  // const columnOneMarkup = (
-  //   <div className={styles.ColumnOne}>
-  //     {columns[0].map((image) => {
-  //       return (<img src={image.url} />)
-  //     })}
-  //   </div>
-  // )
-  
-  // const columnTwoMarkup = (
-  //   <div className={styles.ColumnTwo}>
-  //     {columns[1].map((image) => {
-  //       return (<img src={image.url} />)
-  //     })}
-  //   </div>
-  // )
-  
-  // const columnThreeMarkup = (
-  //   <div className={styles.ColumnThree}>
-  //     {columns[2].map((image) => {
-  //       return (<img src={image.url} />)
-  //     })}
-  //   </div>
-  // )
-
-  // console.log(columnOneMarkup)
+  const columnMarkup = columns.map((column) => {
+    return (<div className={styles.Column}>
+      {column.entries.map((image) => image)}
+    </div>)
+  });
 
   return (
     <SRLWrapper>
       <div className={styles.GalleryContainer}>
         <div className={styles.Gallery}>
-          {images.map((image) => {
-        return (<img src={image.file.url} />)
-      })}
+          {columnMarkup}
         </div>
       </div>
     </SRLWrapper>

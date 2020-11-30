@@ -114,13 +114,13 @@ export default function Services({
           {subContent1}
         </Text>
       </Media>
-      <Media  image={planningImage} rightAligned>
+      <Media image={planningImage} rightAligned>
         <Heading level="2">{subTitle2}</Heading>
         <Text indented impact>
           {subContent2}
         </Text>
       </Media>
-      <Media  image={coordinationImage}>
+      <Media image={coordinationImage}>
         <Heading level="2">{subTitle3}</Heading>
         <Text indented impact>
           {subContent3}
