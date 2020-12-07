@@ -1,5 +1,5 @@
 import React from 'react'
-import generateBlogPostLink from '../utilities/generateBlogPostLink'
+import generateDetailsLink from '../utilities/generateDetailsLink'
 
 import styles from './blogPreview.module.scss'
 
@@ -12,7 +12,7 @@ import Article from './article'
 export default function Blog({ title, post }) {
   return (
     <section className={styles.Blog}>
-      <Border yellow />
+      <Border color={'yellow'} />
       <div className={styles.YellowSection}>
         <Heading level="1" centered={true}>
           {title}
@@ -21,13 +21,17 @@ export default function Blog({ title, post }) {
           <Heading level="2" centered={true}>
             {post.title}
           </Heading>
-          <Text lead centered>
+          <Text impact centered>
             <p>{post.description}</p>
-            <Button url={generateBlogPostLink(post.title)}>read more</Button>
           </Text>
+          <div className={styles.Action}>
+            <Button outline url={generateDetailsLink(post.title)}>
+              read more
+            </Button>
+          </div>
         </Article>
       </div>
-      <Border yellow top />
+      <Border color={'yellow'} top />
     </section>
   )
 }

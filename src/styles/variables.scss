@@ -1,12 +1,16 @@
-$color-pink: #F8AA97;
+$color-pink: #f8aa97;
 $color-black: darken($color-pink, 75%);
 $color-white: #fffcfb;
-$color-gray: #CCC2B8;
-$color-yellow: #FFC233;
-$color-red: #F04E30;
+$color-gray: #ccc2b8;
+$color-yellow: #ffc233;
+$color-red: #f04e30;
 
 $width-wide: 64rem;
 $width-full: 48rem;
-$width-medium: 42rem;
+$width-medium: 46rem;
 $width-small: 32rem;
 
+$mq-tiny: 24em; /* 24 x 16 = 384 */
+$mq-small: 40em; /* 40 x 16 = 640 */
+$mq-medium: 50em; /* 50 x 16 = 800 */
+$mq-large: 64em; /* 64 x 16 = 1024 */

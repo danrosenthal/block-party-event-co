@@ -1,80 +1,148 @@
 @import '../styles/variables';
 
 .Header {
-  background-color: $color-white;
+  position: relative;
+  z-index: 40;
 }
 
-.YellowSection {
-  background-color: $color-yellow;
-  height: 3rem;
+.BorderContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.HeaderContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+
+  @media (min-width: $mq-small) {
+    padding-top: 3rem;
+  }
+
+  @media (min-width: $mq-medium) {
+    padding-top: 4rem;
+  }
+}
+
+.HeaderInnerContainer {
+  display: flex;
+  max-width: $width-wide;
+  width: 100%;
+  padding: 0 2rem;
+  margin-top: -1rem;
 }
 
 .Logo {
   display: flex;
-  justify-content: center;
 
   > * {
-    width: 10rem;
+    width: 8rem;
     height: auto;
+  }
 
-    @media screen and (min-width: $width-medium) {
+  @media (min-width: $mq-large) {
+    padding-right: 6rem;
+
+    > * {
       width: 12rem;
     }
   }
 }
 
-.HeaderContainer {
-  padding: 1rem;
-  display: flex;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: $width-medium;
+.Navigation {
+  list-style: none;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  justify-content: space-between;
+  flex: 0 1 90%;
+  display: none;
 
-  @media screen and (min-width: $width-medium) {
-    padding-top: 5rem;
-    flex-direction: column;
-    align-items: center;
+  @media (min-width: $mq-large) {
+    display: flex;
   }
 }
 
-.Navigation {
+.MobileNavigation {
   list-style: none;
-  box-sizing: border-box;
-  padding-left: 2rem;
-  margin: 0;
-  order: 2;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 1 90%;
+  display: flex;
 
-  @media screen and (min-width: $width-medium) {
-    z-index: 10;
-    padding: 3rem 1rem 3rem;
-    width: 100%;
-    max-width: $width-medium;
-    position: absolute;
-    order: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  @media (min-width: $mq-large) {
+    display: none;
   }
 }
 
 .Item {
   display: block;
+  padding-left: 2rem;
+}
 
-  + .Item {
-    margin-top: 2rem;
+.SideNavigation {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  z-index: 50;
+  
 
-    @media screen and (min-width: $width-medium) {
-      margin-top: 0;
-    }
+  &.exited {
+    display: none;
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  &.entering,
+  &.exiting {
+    display: block;
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+
+  &.entered {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .Item {
+    padding-bottom: 3rem;
   }
 }
 
-.Logo {
-  position: relative;
-  z-index: 20;
+.SideNavigationInnerContainer {
+  border-top-left-radius: 8px;
+  box-shadow: 1px 1px 5px $color-gray;
+  background-color: $color-white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 13rem;
+  z-index: 52;
 }
+
+.SideNavigationBackdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 51;
+}
+

@@ -1,28 +1,16 @@
 @import '../styles/variables';
 
-$image-spacing-unit: 1.5rem;
+$image-spacing-unit: 1rem;
 
 .Services {
-  max-width: $width-small;
-  margin: 0 auto;
-  padding: 2rem;
-
-  @media screen and (min-width: $width-medium) {
-    padding: 0 0 2rem;
-  }
-}
-
-.PinkSection {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-  background-color: $color-pink;
-  color: $color-white;
+  background-color: $color-white;
+  padding-bottom: 2rem;
 }
 
 .Image,
 .Block,
 .Dots {
-  width: 76%
+  width: 76%;
 }
 
 .DesignImage {
@@ -45,7 +33,7 @@ $image-spacing-unit: 1.5rem;
   .Dots {
     position: absolute;
     z-index: 2;
-    bottom: $image-spacing-unit * -1;
+    bottom: $image-spacing-unit * -2;
     right: 0;
   }
 }
@@ -70,10 +58,9 @@ $image-spacing-unit: 1.5rem;
   .Dots {
     position: absolute;
     z-index: 2;
-    bottom: $image-spacing-unit * -1;
+    bottom: $image-spacing-unit * -2;
     left: 0;
   }
-
 }
 
 .CoordinationImage {
@@ -89,7 +76,7 @@ $image-spacing-unit: 1.5rem;
   .Block {
     position: absolute;
     z-index: 1;
-    bottom: $image-spacing-unit * -1;
+    bottom: $image-spacing-unit * -2;
     right: 0;
   }
 

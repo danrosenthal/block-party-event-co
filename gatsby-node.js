@@ -11,11 +11,20 @@ const path = require('path')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
-    const storeTemplate = path.resolve('src/templates/blog-post.js')
+    const blogTemplate = path.resolve('src/templates/blog-post.js')
+    const portfolioTemplate = path.resolve('src/templates/portfolio-details.js')
     resolve(
       graphql(`
         {
-          allContentfulPost {
+          portfolios: allContentfulPortfolio {
+            edges {
+              node {
+                title
+                id
+              }
+            }
+          }
+          blogs: allContentfulPost {
             edges {
               node {
                 id
@@ -29,10 +38,19 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) {
           reject(result.errors)
         }
-        result.data.allContentfulPost.edges.forEach(edge => {
+        result.data.blogs.edges.forEach(edge => {
           createPage({
             path: 'blog/' + slugify(edge.node.title),
-            component: storeTemplate,
+            component: blogTemplate,
+            context: {
+              id: edge.node.id,
+            },
+          })
+        })
+        result.data.portfolios.edges.forEach(edge => {
+          createPage({
+            path: 'portfolio/' + slugify(edge.node.title),
+            component: portfolioTemplate,
             context: {
               id: edge.node.id,
             },

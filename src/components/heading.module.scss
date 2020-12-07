@@ -1,7 +1,8 @@
 @import '../styles/variables';
 
 .Heading {
-  margin-bottom: .75em;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .levelOne {
@@ -17,7 +18,7 @@
 }
 
 .levelThree {
-  font-family: "basic-sans";
+  font-family: 'basic-sans';
   font-weight: 300;
   font-size: 22px;
   text-transform: uppercase;
@@ -25,7 +26,7 @@
 }
 
 .levelFour {
-  font-family: "basic-sans";
+  font-family: 'basic-sans';
   font-weight: 300;
   font-size: 18px;
   text-transform: uppercase;

@@ -1,0 +1,34 @@
+@import '../styles/variables';
+
+.FormLabel {
+  font-family: 'basic-sans';
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 0.5rem;
+  display: block;
+}
+
+.TextField {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: border, box-shadow 200ms ease;
+  border: 4px solid lighten($color-gray, 12%);
+  font-size: 16px;
+  font-family: 'basic-sans';
+  outline: none;
+  appearance: none;
+  background-color: lighten($color-white, 0.0625%);
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 4px $color-pink;
+  }
+}
+
+.tall {
+  min-height: 12rem;
+  resize: none;
+}

@@ -8,7 +8,8 @@ export default function Media({
   children,
   image,
   rightAligned = false,
-  width,
+  padding = true,
+  inline,
   pushRight,
   pushLeft,
 }) {
@@ -17,9 +18,8 @@ export default function Media({
     rightAligned && styles.rightAligned,
     pushRight && styles.pushRight,
     pushLeft && styles.pushLeft,
-    width === 'wide' && styles.wideWidth,
-    width === 'full' && styles.fullWidth,
-    width === 'narrow' && styles.narrowWidth
+    inline && styles.inline,
+    !padding && styles.fullWidth,
   )
 
   return (

@@ -1,8 +1,12 @@
 @import '../styles/variables';
 
 .Team {
-  padding: 8rem 0;
+  padding: 4rem 0 2rem;
   background-color: $color-white;
+
+  @media (min-width: $mq-medium) {
+    padding: 5rem 0 2rem;
+  }
 }
 
 $image-spacing-unit: 1.5rem;
@@ -14,7 +18,7 @@ $image-spacing-unit: 1.5rem;
 .LeftBlock,
 .RightBlock,
 .Dots {
-  width: 70%
+  width: 70%;
 }
 
 .Image {
@@ -43,4 +47,9 @@ $image-spacing-unit: 1.5rem;
   z-index: 1;
   bottom: $image-spacing-unit * -1;
   left: 0;
+}
+
+.Action {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }

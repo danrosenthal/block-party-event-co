@@ -1,0 +1,48 @@
+@import '../styles/variables';
+
+.Feed {
+  background-color: $color-white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+.FeedContainer {
+  max-width: $width-medium;
+}
+
+.FeedItem {
+  display: block;
+  height: 0;
+  padding-bottom: 33.333333%;
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 2px;
+  color: $color-white;
+  transition: color 200ms ease;
+  
+  &:hover {
+    color: $color-yellow;
+  }
+
+  img {
+    width: 100%;
+    position: relative;
+    top: -5rem;
+    z-index: 1;
+  }
+}
+
+.ItemContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}

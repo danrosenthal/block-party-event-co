@@ -8,12 +8,14 @@ export default function Text({
   children,
   centered = false,
   indented = false,
+  impact = false,
 }) {
   const className = classNames(
     styles.Text,
     lead && styles.lead,
     centered && styles.centered,
-    indented && styles.indented
+    indented && styles.indented,
+    impact && styles.impact
   )
 
   return <div className={className}>{children}</div>

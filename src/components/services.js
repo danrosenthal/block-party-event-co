@@ -1,15 +1,11 @@
 import React from 'react'
 
 import styles from './services.module.scss'
-
-import Border from '../components/border'
 import Heading from '../components/heading'
 import Text from '../components/text'
 import Media from '../components/media'
 
 export default function Services({
-  title,
-  content,
   subTitle1,
   subContent1,
   subImage1,
@@ -111,29 +107,25 @@ export default function Services({
   )
 
   return (
-    <>
-      <Border />
-      <div className={styles.PinkSection}>
-        <Heading level="2" centered={true}>
-          {title}
-        </Heading>
-        <div className={styles.Services}>
-          <Text centered lead>{content}</Text>
-        </div>
-        <Media image={designImage} width="full" pushRight>
-          <Heading level="3">{subTitle1}</Heading>
-          <Text indented>{subContent1}</Text>
-        </Media>
-        <Media width="full" image={planningImage} rightAligned pushLeft>
-          <Heading level="3">{subTitle2}</Heading>
-          <Text indented>{subContent2}</Text>
-        </Media>
-        <Media width="full" image={coordinationImage} pushRight>
-          <Heading level="3">{subTitle3}</Heading>
-          <Text indented>{subContent3}</Text>
-        </Media>
-      </div>
-      <Border top />
-    </>
+    <div className={styles.Services}>
+      <Media image={designImage}>
+        <Heading level="2">{subTitle1}</Heading>
+        <Text indented impact>
+          {subContent1}
+        </Text>
+      </Media>
+      <Media image={planningImage} rightAligned>
+        <Heading level="2">{subTitle2}</Heading>
+        <Text indented impact>
+          {subContent2}
+        </Text>
+      </Media>
+      <Media image={coordinationImage}>
+        <Heading level="2">{subTitle3}</Heading>
+        <Text indented impact>
+          {subContent3}
+        </Text>
+      </Media>
+    </div>
   )
 }

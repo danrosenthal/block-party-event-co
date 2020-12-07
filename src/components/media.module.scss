@@ -4,47 +4,51 @@
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  margin: 2rem auto 0;
+  margin: 0 auto;
   flex-direction: column;
-  padding: 2rem;
+  max-width: $width-wide;
+  padding: 3rem .5rem;
 
-  @media screen and (min-width: $width-medium) {
-    padding: 0;
+  &.fullWidth {
+    padding: 3rem 0;
+  }
+
+  &.inline {
+    padding: 1rem 0;
+  }
+
+  @media screen and (min-width: $mq-small) {
     flex-direction: row;
   }
 }
 
-.narrowWidth {
-  max-width: $width-small;
-}
-
-.fullWidth {
-  max-width: $width-full;
-}
-
-.wideWidth {
-  max-width: $width-wide;
-}
-
 .Image {
-  padding: 0 4% 4rem 0;
+  padding: 0 1rem 4rem 0;
   flex: 1 0 100%;
 
-  @media screen and (min-width: $width-medium) {
-    padding: 0 4% 2rem 0;
+  .inline & {
+    padding: 0 0 2rem 0;
+  }
+
+  @media screen and (min-width: $mq-small) {
+    padding: 0 8% 2rem 0;
     flex: 1 0 30%;
+
+    .inline & {
+      padding: 0 2rem 0 0;
+    }
   }
 }
 
 .Content {
   flex: 1 0 100%;
-  @media screen and (min-width: $width-medium) {
-    flex: 1 0 66%;
+  @media screen and (min-width: $mq-small) {
+    flex: 1 1 62%;
   }
 }
 
 .rightAligned {
-  @media screen and (min-width: $width-medium) {
+  @media screen and (min-width: $mq-small) {
     flex-direction: row-reverse;
   }
 
@@ -56,14 +60,14 @@
 $push-offset: 6rem;
 
 .pushRight {
-  @media screen and (min-width: $width-medium) {
+  @media screen and (min-width: $mq-small) {
     padding-left: $push-offset;
     padding-right: 1rem;
   }
 }
 
 .pushLeft {
-  @media screen and (min-width: $width-medium) {
+  @media screen and (min-width: $mq-small) {
     padding-right: $push-offset;
     padding-left: 1rem;
   }
