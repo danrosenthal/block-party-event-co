@@ -1,7 +1,7 @@
 @import '../styles/variables';
 
 .FormLabel {
-  font-family: 'basic-sans';
+  font-family: 'basic-sans', sans-serif;
   font-weight: 300;
   font-size: 18px;
   text-transform: uppercase;
@@ -17,7 +17,7 @@
   transition: border, box-shadow 200ms ease;
   border: 4px solid lighten($color-gray, 12%);
   font-size: 16px;
-  font-family: 'basic-sans';
+  font-family: 'basic-sans', sans-serif;
   outline: none;
   appearance: none;
   background-color: lighten($color-white, 0.0625%);
