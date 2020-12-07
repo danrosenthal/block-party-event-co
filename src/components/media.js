@@ -9,6 +9,7 @@ export default function Media({
   image,
   rightAligned = false,
   padding = true,
+  inline,
   pushRight,
   pushLeft,
 }) {
@@ -17,6 +18,7 @@ export default function Media({
     rightAligned && styles.rightAligned,
     pushRight && styles.pushRight,
     pushLeft && styles.pushLeft,
+    inline && styles.inline,
     !padding && styles.fullWidth,
   )
 

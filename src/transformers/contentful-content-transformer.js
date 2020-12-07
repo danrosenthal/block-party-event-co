@@ -18,6 +18,7 @@ export default function contentfulContentTransformer(content) {
         const { title = '', heroImage, description } = node.data.target.fields;
         return (
           <Media
+            inline={true}
             width="full"
             padding={false}
             image={

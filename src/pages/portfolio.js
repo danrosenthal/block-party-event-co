@@ -34,10 +34,8 @@ class PortfolioPage extends React.Component {
           image={heroImageUrl}
           short={true}
         />
-        <Page>
-          {contentfulContentTransformer(content)}
-        </Page>
-        <Feed items={portfolioItems}></Feed>
+        <Page>{contentfulContentTransformer(content)}</Page>
+        <Feed items={portfolioItems} root="portfolio"></Feed>
       </Layout>
     )
   }

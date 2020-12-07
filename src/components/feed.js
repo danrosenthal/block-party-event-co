@@ -5,10 +5,10 @@ import Heading from './heading'
 
 import styles from './feed.module.scss'
 
-export default function Feed({ children, items }) {
+export default function Feed({ children, items, root }) {
   const itemsMarkup = items.map((item) => {
     return (
-      <a className={styles.FeedItem} href={generateDetailsLink(item.title, 'portfolio')}>
+      <a className={styles.FeedItem} href={generateDetailsLink(item.title, root)}>
         <div className={styles.ItemContent}>
           <Heading level="2" centered={true}>
             {item.title}

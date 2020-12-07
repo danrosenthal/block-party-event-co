@@ -10,18 +10,36 @@
 
 .Gallery {
   padding: 1rem 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1.5rem;
   max-width: $width-wide;
+
+  @media (min-width: 1060px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+  }
+
+  img 
+
+  img:hover {
+    cursor: pointer;
+  }
 }
 
 .Column {
-  max-height: 458px;
-  overflow: hidden;
   border-radius: 2px;
 
+  @media (min-width: 1060px) {
+    max-height: 458px;
+    overflow: hidden;
+  }
+
   img + img {
+    margin-top: 1.5rem;
+  }
+}
+
+.Column + .Column {
+  @media (max-width: 1059px) {
     margin-top: 1.5rem;
   }
 }

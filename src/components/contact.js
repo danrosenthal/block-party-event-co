@@ -44,7 +44,7 @@ export default function Contact({ dots }) {
     <section className={className} id="#contact">
       <div className={styles.Figure}>
         <div className={styles.FormContainer}>
-          <Heading level="1">Get in touch</Heading>
+          <Heading level="1">Get the party started!</Heading>
           <form
             name="contact"
             method="POST"
@@ -66,7 +66,7 @@ export default function Contact({ dots }) {
             <div className={styles.FormSection}>
               <input type="hidden" name="form-name" value="contact" />
               <Button submit primary>
-                Submit
+                Send it
               </Button>
             </div>
           </form>

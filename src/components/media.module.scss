@@ -13,6 +13,10 @@
     padding: 3rem 0;
   }
 
+  &.inline {
+    padding: 1rem 0;
+  }
+
   @media screen and (min-width: $mq-small) {
     flex-direction: row;
   }
@@ -22,9 +26,17 @@
   padding: 0 1rem 4rem 0;
   flex: 1 0 100%;
 
+  .inline & {
+    padding: 0 0 2rem 0;
+  }
+
   @media screen and (min-width: $mq-small) {
     padding: 0 8% 2rem 0;
     flex: 1 0 30%;
+
+    .inline & {
+      padding: 0 2rem 0 0;
+    }
   }
 }
 
