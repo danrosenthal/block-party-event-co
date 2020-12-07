@@ -7,7 +7,7 @@ export default function Gallery({ images }) {
   function addEntry(size, image) {
     columns.push({
       size,
-      entries: [<img src={image.file.url} />]
+      entries: [<img src={image.file.url} loading="lazy" />]
     })
   };
   const columns = [];
