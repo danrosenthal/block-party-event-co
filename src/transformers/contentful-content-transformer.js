@@ -58,9 +58,5 @@ export default function contentfulContentTransformer(content) {
     },
   }
 
-  if (typeof content.content === 'string') {
-    return documentToReactComponents(JSON.parse(content.content), options)
-  } else if (typeof content.content === 'object') {
-    console.log({content: content.content})
-  }
+  return documentToReactComponents(JSON.parse(content.content), options);
 }
