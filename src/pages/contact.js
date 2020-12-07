@@ -15,7 +15,6 @@ const propTypes = {
 }
 
 class ContactPage extends React.Component {
-
   render() {
     const {
       title,
@@ -26,13 +25,17 @@ class ContactPage extends React.Component {
     } = this.props.data.contentfulContactPage
     return (
       <Layout>
-        <Hero title={title} impact={true} lead={false} image={heroImageUrl} short={true} />
-        <Page>
-          {contentfulContentTransformer(content)}
-        </Page>
+        <Hero
+          title={title}
+          impact={true}
+          lead={false}
+          image={heroImageUrl}
+          short={true}
+        />
+        <Page>{contentfulContentTransformer(content)}</Page>
         <Contact title="Contact" />
       </Layout>
-    );
+    )
   }
 }
 
@@ -53,6 +56,5 @@ export const contactPageQuery = graphql`
     }
   }
 `
-
 
 export default ContactPage
