@@ -19,13 +19,8 @@ class PortfolioDetailsTemplate extends React.Component {
     const { heroImage: { file: { url } },
       title,
       content,
-      vendorCredits,
       gallery,
     } = contentfulPortfolio;
-    const imageMarkup = contentfulPortfolio.gallery.map((item) => {
-      return <img src={item.file.url} />
-    })
-    console.log({content, vendorCredits})
 
     return (
       <Layout>
@@ -34,9 +29,6 @@ class PortfolioDetailsTemplate extends React.Component {
           {contentfulContentTransformer(content)}
         </Page>
         <Gallery images={gallery} />
-        <Page>
-          {contentfulContentTransformer(vendorCredits)}
-        </Page>
       </Layout >
     )
   }
@@ -67,14 +59,6 @@ export const pageQuery = graphql`
       }
       content {
         content
-      }
-      vendorCredits {
-        content {
-          content {
-            value
-            nodeType
-          }
-        }
       }
     }
   }

@@ -19,7 +19,6 @@ class BlogPage extends React.Component {
         file: { url: heroImageUrl },
       },
     } = this.props.data.contentfulBlogPage
-    const { allContentfulPost } = this.props.data
     const posts = this.props.data.allContentfulPost.edges.map(
       (item) => {
         return {
