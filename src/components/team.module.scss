@@ -19,13 +19,23 @@ $image-spacing-unit: 1.5rem;
 .RightBlock,
 .Dots {
   width: 70%;
+  display: none;
+
+  @media screen and (min-width: $mq-medium) {
+    display: block;
+  }
 }
 
 .Image {
-  width: 80%;
   margin: 0 auto;
   position: relative;
   z-index: 3;
+  max-width: 22rem;
+
+  @media screen and (min-width: $mq-medium) {
+    max-width: none;
+    width: 80%;
+  }
 }
 
 .LeftBlock {
