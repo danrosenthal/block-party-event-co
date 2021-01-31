@@ -7,7 +7,7 @@
   margin: 0 auto;
   flex-direction: column;
   max-width: $width-wide;
-  padding: 3rem .5rem;
+  padding: 4rem 0 1rem;
 
   &.fullWidth {
     padding: 3rem 0;
@@ -19,6 +19,7 @@
 
   @media screen and (min-width: $mq-small) {
     flex-direction: row;
+    padding: 3rem 0;
   }
 }
 
@@ -42,7 +43,14 @@
 
 .Content {
   flex: 1 0 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 0;
+
   @media screen and (min-width: $mq-small) {
+    padding: 0;
+    display: block;
     flex: 1 1 62%;
   }
 }

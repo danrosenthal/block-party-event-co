@@ -5,7 +5,10 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-bottom: 4rem;
+
+  @media (min-width: $mq-medium) {
+    padding-bottom: 1rem;
+  }
 }
 
 .PageContainer {

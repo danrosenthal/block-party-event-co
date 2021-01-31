@@ -35,6 +35,10 @@ export default function Hero({
     </div>
   )
 
+  const buttonMarkup = button && (
+    <div className={styles.Action}>{button}</div>
+  )
+
   const className = classNames(styles.Image, short && styles.short);
 
   return (
@@ -53,7 +57,7 @@ export default function Hero({
       <div className={styles.ContentContainer}>
         <div className={styles.ContentInnerContainer}>
           {contentMarkup}
-          <div className={styles.Action}>{button}</div>
+          {buttonMarkup}
         </div>
       </div>
     </section>

@@ -62,9 +62,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0 1rem;
+  padding: 3rem 0 0;
 
   @media (min-width: $mq-large) {
+    padding: 0;
     position: absolute;
     top: 10%;
     right: 0;
@@ -83,12 +84,15 @@
 
 .Content {
   max-width: $width-medium;
-  padding-bottom: 2rem;
   box-sizing: border-box;
 
   @media (min-width: $mq-large) {
     color: $color-white;
   }
+}
+
+.Content + .Action {
+  margin-top: 1rem;
 }
 
 .Border {

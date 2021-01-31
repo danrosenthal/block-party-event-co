@@ -10,11 +10,13 @@ export default function Button({
   submit,
   outline,
   primary,
+  fullWidth,
 }) {
   const className = classNames(
     styles.Button,
     outline && styles.outline,
-    primary && styles.primary
+    primary && styles.primary,
+    fullWidth && styles.fullWidth
   )
 
   const type = submit ? 'submit' : 'button'

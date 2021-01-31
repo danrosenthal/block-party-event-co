@@ -41,7 +41,11 @@ $image-spacing-unit: 1.5rem;
 
 .Contact {
   color: $color-white;
-  padding: 4rem 0 10rem;
+  padding: 4rem 0 4rem;
+
+  @media screen and (min-width: $mq-small) {
+    padding: 4rem 0 10rem;
+  }
 
   &.dots {
     background-image: url('../images/dots-square.png');
@@ -61,8 +65,6 @@ $image-spacing-unit: 1.5rem;
   background-color: $color-gray;
   padding: 2rem;
   box-sizing: border-box;
-  width: calc(100% - 3rem);
-  margin: 1.5rem;
   position: relative;
   z-index: 3;
   border-radius: 2px;
