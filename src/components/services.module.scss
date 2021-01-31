@@ -10,12 +10,23 @@ $image-spacing-unit: 1rem;
 .Image,
 .Block,
 .Dots {
-  width: 76%;
+  @media screen and (min-width: $mq-medium) {
+    width: 76%;
+  }
+}
+
+.Block, .Dots {
+  display: none;
+
+  @media screen and (min-width: $mq-medium) {
+    display: block;
+  }
 }
 
 .DesignImage {
   position: relative;
   padding-top: $image-spacing-unit;
+  display: flex;
 
   .Image {
     margin: 0 auto;
@@ -41,6 +52,7 @@ $image-spacing-unit: 1rem;
 .PlanningImage {
   position: relative;
   padding-top: $image-spacing-unit;
+  display: flex;
 
   .Image {
     margin: 0 auto;
@@ -66,6 +78,7 @@ $image-spacing-unit: 1rem;
 .CoordinationImage {
   position: relative;
   padding-top: $image-spacing-unit;
+  display: flex;
 
   .Image {
     margin: 0 auto;

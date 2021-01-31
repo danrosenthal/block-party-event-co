@@ -10,6 +10,7 @@ $image-spacing-unit: 1.5rem;
   position: relative;
   padding-top: $image-spacing-unit;
   margin: 0 auto;
+  
   @media screen and (min-width: $mq-small) {
     max-width: $width-small;
   }
