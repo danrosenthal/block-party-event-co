@@ -65,7 +65,9 @@
   }
 
   .Image {
-    padding: 0 0 2rem 4%;
+    @media screen and (min-width: $mq-medium) {
+      padding: 0 0 2rem 4%;
+    }
   }
 }
 
