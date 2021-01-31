@@ -4,6 +4,7 @@ import styles from './services.module.scss'
 import Heading from '../components/heading'
 import Text from '../components/text'
 import Media from '../components/media'
+import Rhythm from '../components/rhythm'
 
 export default function Services({
   subTitle1,
@@ -109,22 +110,34 @@ export default function Services({
   return (
     <div className={styles.Services}>
       <Media image={designImage}>
-        <Heading level="2">{subTitle1}</Heading>
-        <Text indented impact>
-          {subContent1}
-        </Text>
+        <Rhythm>
+          <Heading level="2" centered>
+            {subTitle1}
+          </Heading>
+          <Text indented impact>
+            {subContent1}
+          </Text>
+        </Rhythm>
       </Media>
       <Media image={planningImage} rightAligned>
-        <Heading level="2">{subTitle2}</Heading>
-        <Text indented impact>
-          {subContent2}
-        </Text>
+        <Rhythm>
+          <Heading level="2" centered>
+            {subTitle2}
+          </Heading>
+          <Text indented impact>
+            {subContent2}
+          </Text>
+        </Rhythm>
       </Media>
       <Media image={coordinationImage}>
-        <Heading level="2">{subTitle3}</Heading>
-        <Text indented impact>
-          {subContent3}
-        </Text>
+        <Rhythm>
+          <Heading level="2" centered>
+            {subTitle3}
+          </Heading>
+          <Text indented impact>
+            {subContent3}
+          </Text>
+        </Rhythm>
       </Media>
     </div>
   )
