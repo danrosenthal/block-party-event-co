@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import SimpleReactLightbox from "simple-react-lightbox";
 
 import generateDetailsLink from '../utilities/generateDetailsLink'
 
@@ -47,7 +46,7 @@ const Layout = ({ children }) => (
           meta={[
             {
               name: 'viewport',
-              content: 'width=device-width, initial-scale=1'
+              content: 'width=device-width, initial-scale=1',
             },
             {
               name: 'description',
@@ -99,16 +98,15 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <SimpleReactLightbox>
-          <div id="pageContainer">
-            <Header
-              postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
-              showNav
-            />
-            {children}
-            <Footer />
-          </div>
-        </SimpleReactLightbox>
+
+        <div id="pageContainer">
+          <Header
+            postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
+            showNav
+          />
+          {children}
+          <Footer />
+        </div>
       </>
     )}
   />
@@ -119,4 +117,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
