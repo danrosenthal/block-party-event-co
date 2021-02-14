@@ -8,7 +8,7 @@ import styles from './header.module.scss'
 import Border from '../components/border'
 import Button from '../components/button'
 
-export default function Header({ postLink, showNav }) {
+export default function Header({ showNav }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleMenuClick = () => {
@@ -121,10 +121,11 @@ export default function Header({ postLink, showNav }) {
                   </Button>
                 </div>
               </div>
-              <div
-                role="button"
+              <button
+                type="button"
                 onClick={handleMenuClick}
                 className={styles.SideNavigationBackdrop}
+                aria-label="Close navigation menu"
               />
             </div>
           )
