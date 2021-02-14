@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import generateDetailsLink from '../utilities/generateDetailsLink'
-
 import { StaticQuery, graphql } from 'gatsby'
 import Footer from '../components/footer'
 import Header from '../components/header'
@@ -26,14 +24,6 @@ const Layout = ({ children }) => (
                 }
                 description
               }
-            }
-          }
-        }
-        allPost(sort: { fields: createdAt, order: DESC }, limit: 1) {
-          edges {
-            node {
-              title
-              description
             }
           }
         }
@@ -101,7 +91,6 @@ const Layout = ({ children }) => (
 
         <div id="pageContainer">
           <Header
-            postLink={generateDetailsLink(data.allPost.edges[0].node.title)}
             showNav
           />
           {children}
